@@ -1,1 +1,1 @@
-web: joinsplit
+web: AutomatedRegression

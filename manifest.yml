@@ -1,5 +1,5 @@
 applications:
-- name: JoinSplit
+- name: AutomatedRegression
   memory: 128M
-  host: JoinSplit
+  host: AutomatedRegression
   buildpack: https://github.com/cloudfoundry/go-buildpack
