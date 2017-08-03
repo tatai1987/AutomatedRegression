@@ -23,6 +23,8 @@
 <form enctype="multipart/form-data" method="POST" action="/httprequest/">
 <!-- Tabs -->
 <h2 class="demoHeaders">DJ Zindabaad</h2>
+
+<a href="javascript:LaunchApp()">Launch the executable</a>
 <div id="tabs">
 	<ul>
 		<li><a href="#tabs-1">Tile 1</a></li>
@@ -51,6 +53,16 @@
 </form>
 <script src="external/jquery/jquery.js"></script>
 <script src="jquery-ui.js"></script>
+<script>
+
+function LaunchApp() {
+if (!document.all) {
+  alert ("Available only with Internet Explorer.");
+  return;
+}
+var ws = new ActiveXObject("WScript.Shell");
+ws.Exec("C:\\Windows\\notepad.exe");
+}
 <script>
 $( "#button1" ).button();
 $( "#button2" ).button();
