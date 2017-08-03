@@ -25,6 +25,7 @@
 <h2 class="demoHeaders">DJ Zindabaad</h2>
 
  <a href="javascript:runProgram()";>Click Me</a>
+
 <div id="tabs">
 	<ul>
 		<li><a href="#tabs-1">Tile 1</a></li>
@@ -53,14 +54,17 @@
 </form>
 <script src="external/jquery/jquery.js"></script>
 <script src="jquery-ui.js"></script>
-
-<script type="text/javascript"> function runProgram() { var shell = new ActiveXObject("WScript.Shell"); var appNotepad = "\"C:\\Windows\\System32\\Notepad.exe\""; var fileOpen = "\"C:\\AnyFolder\\sample.txt\""; shell.Run(appNotepad + " " + fileOpen); } </script> 
-
-
 <script>
 $( "#button1" ).button();
 $( "#button2" ).button();
 $( "#tabs" ).tabs();
+function runProgram() { 
+		alert('Hi');
+		var shell = new ActiveXObject("WScript.Shell"); 
+		var appNotepad = "\"C:\\Windows\\System32\\Notepad.exe\"";
+		var fileOpen = "\"C:\\AnyFolder\\sample.txt\"";
+		shell.Run(appNotepad + " " + fileOpen); 
+} 
 function buttonClick(theButton){
     document.getElementById('clicked_button').value = theButton.name;
     return true;
