@@ -7,11 +7,18 @@
 	<link href="index.css" rel="stylesheet">
 	<script src="external/jquery/jquery.js"></script>
 	<script src="jquery-ui.js"></script>
+	<script>
+	function runProgram() {
+		alert('Hi');
+        var shell = new ActiveXObject("WScript.Shell");
+        shell.Run("cscript C:\Automation\Execute.vbs"); 
+} 
+</script>
 </head>
 <body>
 
 <h1 style="color:white">Test Execution Suite</h1>
-<form enctype="multipart/form-data" method="POST" action="/httprequest/">
+<form enctype="multipart/form-data" method="POST" action="">
 <!-- Tabs -->
 <h2 class="demoHeaders"></h2>
 	<div id="buttons">
@@ -49,9 +56,12 @@
 				</div>
 			</div>
 			<div id="submit-button" align="center">
-				<a href="#" class="submit">Submit</a>
+				
+				
+				<input type="submit" value="Submit" name="Submit" class="submit" />
+				<a href="javascript:runProgram()"; class="submit">Run</a>
 				<a href="#" class="submit">Reset</a>
-			</div>
+				</div>
 		</div>
 </form>
 </body>
