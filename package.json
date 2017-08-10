@@ -43,7 +43,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/jquery/jquery-ui.git"
+		"url": "git://github.com/tealeg/xlsx"
 	},
 	"bugs": "https://bugs.jqueryui.com/",
 	"license": "MIT",
