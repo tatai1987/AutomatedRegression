@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/tealeg/xlsx"
+	"tealeg/xlsx"
 )
 
 var target string
