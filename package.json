@@ -43,7 +43,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/tatai1987/AutomatedRegression"
+		"url": "git://github.com/tealeg/xlsx"
 	},
 	"bugs": "https://bugs.jqueryui.com/",
 	"license": "MIT",

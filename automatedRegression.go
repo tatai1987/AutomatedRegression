@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/golang/xlsx"
+	"github.com/tealeg/xlsx"
 )
 
 var target string
