@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/golang/xlsx"
+	"github.com/tealeg/xlsx"
 )
 
 var target string
@@ -47,23 +47,26 @@ func writeToExcel() {
 	if err != nil {
 		fmt.Println("Error")
 	}
-	for _, sheet := range xlFile.Sheets {
-		for _, row := range sheet.Rows {
-			row.Cells[3].Value = "No"
+
+	for _, row := range xlFile.Sheets[0].Rows {
+		row.Cells[3].Value = "No"
+	}
+
+	for _, row := range xlFile.Sheets[0].Rows {
+		if row.Cells[0].Value == "PTE" && row.Cells[1].Value == "NWPFE_AUTH" {
+			row.Cells[3].Value = "Yes"
+
 		}
 	}
 
-	for _, sheet := range xlFile.Sheets {
-		for _, row := range sheet.Rows {
+	for _, row := range xlFile.Sheets[1].Rows {
+		row.Cells[6].Value = "No"
+	}
 
-			for _, cell := range row.Cells {
-				text := cell.String()
-				if text == "PTE" {
-					row.Cells[3].Value = "Yes"
+	for _, row := range xlFile.Sheets[1].Rows {
+		if row.Cells[7].Value == "NWPFE_AUTH" {
+			row.Cells[6].Value = "Yes"
 
-				}
-
-			}
 		}
 	}
 
