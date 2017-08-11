@@ -1,68 +1,245 @@
-<!doctype html>
-<html lang="us">
+<!DOCTYPE html>
 <head>
-	<meta charset="utf-8">
-	<title>Automation Test Console</title>
-	<link href="jquery-ui.css" rel="stylesheet">
-	<link href="index.css" rel="stylesheet">
-	<script src="external/jquery/jquery.js"></script>
-	<script src="jquery-ui.js"></script>
-	<script>
-	function runProgram() {
-		alert('Hi');
-        var shell = new ActiveXObject("WScript.Shell");
-        shell.Exec("wscript C:\\Automation\\Execute.vbs"); 
-} 
-</script>
+    <title>Test Command Console</title>
+    <link rel="stylesheet" href="newGrid.css">
+    <script src="grid.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+<div class="container">
+    <div class="row">
+		<section>
+        <div class="wizard">
+            <div class="wizard-inner">
+                
+                <ul class="nav nav-tabs" align='center' role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#step1" data-toggle="tab" aria-controls="Environment Health" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="fa fa-stethoscope"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li role="presentation" class="disabled">
+                        <a href="#step2" data-toggle="tab" aria-controls="Execute Tests" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <i class="fa fa-tasks"></i>
+                            </span>
+                        </a>
+                    </li>
+                   
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" aria-controls="Results" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="fa fa-list-alt"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-<h1 style="color:white">Test Execution Suite</h1>
-<form enctype="multipart/form-data" method="POST" action="">
-<!-- Tabs -->
-<h2 class="demoHeaders"></h2>
-	<div id="buttons">
-			<div id="first-row" align="center">
-				<a href="#" class="myButton">Environment</a>
-				<div>
-					<a href="#" class="ctef1">NWP CTEF1</a>
-					<a href="#" class="ctef1">NWP CTEF2</a>
-					<a href="#" class="ctef1">NWP PTE2</a>
-					<a href="#" class="ctef1">SOF CTEF1</a>
-					<a href="#" class="ctef1">SOF CTEF2</a>
-					<a href="#" class="ctef1">iSell CTEF1</a>
-				</div>
-			</div>	
-			<div id="second-row" align="center">
-				<a href="#" class="myButton">NWP Regression Suite</a>	
-				<div>
-					<a href="#" class="ctef1">NWP Smoke Pack</a>
-					<a href="#" class="ctef1">NWP Regression Pack</a>
-					<a href="#" class="ctef1">IWF Regression</a>
-					<a href="#" class="ctef1">ATG Regression</a>
-					<a href="#" class="ctef1">WCS Regression Back</a>
-				</div>
-			</div>
-			<div id="third-row" align="center">
-				<a href="#" class="myButton">SOF Regression Suite</a>	
-				<div>
-					<a href="#" class="ctef1">SOF Smoke Pack</a>
-					<a href="#" class="ctef1">Single Fulfilment Unit Regression Pack</a>
-					<a href="#" class="ctef1">Multiple Fulfilment Unit Regression Pack</a>
-					<a href="#" class="ctef1">SOF Order Happy Flow</a>
-					<a href="#" class="ctef1">SOF Devation Flow</a>
-					<a href="#" class="ctef1">SOF Order Replenishment</a>
-					<a href="#" class="ctef1">End To End</a>
-				</div>
-			</div>
-			<div id="submit-button" align="center">
-				
-				
-				<input type="submit" value="Submit" name="Submit" class="submit" />
-				<a href="javascript:runProgram()"; class="submit">Run</a>
-				<a href="#" class="submit">Reset</a>
-				</div>
-		</div>
-</form>
+            <form role="form">
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="step1">
+                        <div class="step1">
+                            <div class="row">
+                            
+                            </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="env-health-nwp">Environment Health - NWP</label>
+                                <div class="form-group">
+                                    <!-- On rows -->
+                                      <table class="table table-striped">
+                                        <tr class="active">
+                                        <!-- On cells (`td`or `th`) -->
+                                            <td class="active">Content</td>
+                                            <td class="success">Content</td>
+                                            <td class="warning">Content</td>
+                                            <td class="danger">content</td>
+                                            <td class="info">content</td>
+                                        </tr>
+                                        <tr class="active">
+                                        <!-- On cells (`td`or `th`) -->
+                                            <td class="active">Content</td>
+                                            <td class="success">Content</td>
+                                            <td class="warning">Content</td>
+                                            <td class="danger">content</td>
+                                            <td class="info">content</td>
+                                        </tr>
+                                        <tr class="active">
+                                        <!-- On cells (`td`or `th`) -->
+                                            <td class="active">Content</td>
+                                            <td class="success">Content</td>
+                                            <td class="warning">Content</td>
+                                            <td class="danger">content</td>
+                                            <td class="info">content</td>
+                                        </tr>
+                                        <tr class="active">
+                                        <!-- On cells (`td`or `th`) -->
+                                            <td class="active">Content</td>
+                                            <td class="success">Content</td>
+                                            <td class="warning">Content</td>
+                                            <td class="danger">content</td>
+                                            <td class="info">content</td>
+                                        </tr>
+                                      </table>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="env-health-nwp">Environment Health - SOM</label>
+                                <div class="form-group">
+                                  <table class="table table-striped">
+                                        <tr class="active">
+                                        <!-- On cells (`td`or `th`) -->
+                                            <td class="active">Content</td>
+                                            <td class="success">Content</td>
+                                            <td class="warning">Content</td>
+                                            <td class="danger">content</td>
+                                            <td class="info">content</td>
+                                        </tr>
+                                        <tr class="active">
+                                        <!-- On cells (`td`or `th`) -->
+                                            <td class="active">Content</td>
+                                            <td class="success">Content</td>
+                                            <td class="warning">Content</td>
+                                            <td class="danger">content</td>
+                                            <td class="info">content</td>
+                                        </tr>
+                                        <tr class="active">
+                                        <!-- On cells (`td`or `th`) -->
+                                            <td class="active">Content</td>
+                                            <td class="success">Content</td>
+                                            <td class="warning">Content</td>
+                                            <td class="danger">content</td>
+                                            <td class="info">content</td>
+                                        </tr>
+                                        <tr class="active">
+                                        <!-- On cells (`td`or `th`) -->
+                                            <td class="active">Content</td>
+                                            <td class="success">Content</td>
+                                            <td class="warning">Content</td>
+                                            <td class="danger">content</td>
+                                            <td class="info">content</td>
+                                        </tr>
+                                      </table>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step2">
+                        <div class="step2">
+                            <div class="step_21">   
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                    <div class="tile blue">
+                                        <h3 class="title">Environment</h3>
+                                    </div>
+                                    <div id="env-tab">
+                                        <a class="metrostyle orgmetro" style="cursor: pointer" href="../UserGUI/Users_List.aspx">
+                                            <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">NWP CTEF1 </span>
+                                        </a>
+                                        <a class="metrostyle eenmetro" style="cursor: pointer" href="">
+                                            <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">NWP CTEF2 </span>
+                                        </a>
+                                        <a style="cursor: pointer" class="metrostyle boometro" href="../Medical/Hospitals_List.aspx">
+                                             <span style="color:white;float:left;margin-top:35px;margin-left:10px;margin-right:50px">NWP PTE2</span>
+                                        </a>
+                                        <a class="metrostyle reemetro" style="cursor: pointer" href="../Medical/Branchs_List.aspx">
+                                             <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">SOF CTEF1 </span>
+                                        </a>
+                                        <a class="metrostyle yoometro" style="cursor: pointer" href="../Medical/Clinics_List.aspx">
+                                             <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">SOF CTEF2</span>
+                                        </a>
+                                        <a style="cursor: pointer" class="metrostyle toometro" href="../Admin/VisitType.aspx">
+                                            <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:70px">iSell CTEF1</span>
+                                        </a>
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                    <div class="tile green">
+                                        <h3 class="title">NWP Regression Suite</h3>
+                                    </div>
+                                    <div id="regression-tab">
+                                        <a class="metrostyle orgmetro" style="cursor: pointer" href="../UserGUI/Users_List.aspx">
+                                            <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">NWP Smoke Pack </span>
+                                        </a>
+                                        <a class="metrostyle eenmetro" style="cursor: pointer" href="">
+                                            <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">NWP Regression Pack </span>
+                                        </a>
+                                        <a style="cursor: pointer" class="metrostyle boometro" href="../Medical/Hospitals_List.aspx">
+                                             <span style="color:white;float:left;margin-top:35px;margin-left:10px;margin-right:50px">IWF Regression</span>
+                                        </a>
+                                        <a class="metrostyle reemetro" style="cursor: pointer" href="../Medical/Branchs_List.aspx">
+                                             <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">ATG Regression </span>
+                                        </a>
+                                        <a class="metrostyle metrostylelarge yoometro" style="cursor: pointer" href="../Medical/Clinics_List.aspx">
+                                             <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">WCS Regression</span>
+                                        </a>
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                    <div class="tile orange">
+                                        <h3 class="title">SOF Regression Suite</h3>
+                                    </div>
+                                    <div id="regression-tab">
+                                        <a class="metrostyle orgmetro" style="cursor: pointer" href="../UserGUI/Users_List.aspx">
+                                            <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">SOF Smoke Pack </span>
+                                        </a>
+                                        <a class="metrostyle eenmetro" style="cursor: pointer" href="">
+                                            <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">Single Fulfilment Unit Regression Pack </span>
+                                        </a>
+                                        <a style="cursor: pointer" class="metrostyle boometro" href="../Medical/Hospitals_List.aspx">
+                                             <span style="color:white;float:left;margin-top:35px;margin-left:10px;margin-right:50px">Multiple Fulfilment Unit Regression Pack</span>
+                                        </a>
+                                        <a class="metrostyle reemetro" style="cursor: pointer" href="../Medical/Branchs_List.aspx">
+                                             <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">SOF Order Happy Flow </span>
+                                        </a>
+                                        <a class="metrostyle metrostylelarge yoometro" style="cursor: pointer" href="../Medical/Clinics_List.aspx">
+                                             <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">SOF Devation Flow</span>
+                                        </a>
+                                    </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                        <ul class="list-inline pull-right margin-top-1">
+                            <li><button type="button" class="btn btn-primary next-step">Save</button></li>
+                            <li><button type="button" class="btn btn-primary next-step">Reset</button></li>
+                            <li><button type="button" class="btn btn-default next-step" onclick="runProgram();">Execute Now</button></li>
+                            <li><button type="button" class="btn btn-primary next-step">Scheduled for later</button></li>                        
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-pane" role="tabpanel" id="complete">
+                        <div class="step44">
+                            <h5>Whats Next</h5>
+                            <hr>
+                            <div id="accordion-container">
+                                <h2 class="accordion-header"> Your Assigned Branch Office & Consultant</h2>
+                                <div class="accordion-content">
+                                  
+                                </div>
+                                <h2 class="accordion-header"> Upload Resume</h2>
+                                <div class="accordion-content">
+                                  <label for="exampleInputFile">File input</label>
+                                    <input type="file" id="exampleInputFile">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+   </div>
+</div>
 </body>
 </html>
