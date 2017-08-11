@@ -34,8 +34,39 @@ function prevTab(elem) {
     $(elem).prev().find('a[data-toggle="tab"]').click();
 }
 
-function runProgram() {
-        alert('Hi');
+function updateMDF() {
+        alert('Inside Update MDF');
+        var excel = new ActiveXObject("Excel.Application");
+        alert(excel);
+        var excel_file = excel.Workbooks.Open("C:\\Automation\\regression\\MDF.xlsx");
+        alert('I am here');
+        //excel.Visible = true;
+        
+        var excel_sheet = excel_file.Worksheets("Applications");
+        
+        var data = excel_sheet.Cells(2,2).Value;
+        alert(data);
+
+         for(var i=1;i<=39;i++){
+                excel_sheet.Cells(i,4).Value ='No';
+            }
+        
+
+        for(var i=1;i<=39;i++){
+            var data =excel_sheet.Cells(i,1).Value;
+            if(data =='PTE' && excel_sheet.Cells(i,2).Value =='NWPFE_AUTH'){
+                excel_sheet.Cells(i,4).Value ='Yes';
+                console.info(excel_sheet.Cells(i,4).Value);
+            }
+        }
+         console.info(data);
+         excel.Workbooks.Close=true;
+        //var shell = new ActiveXObject("WScript.Shell");
+        //shell.Exec("wscript C:\\Automation\\regression\\MDF.xlsx"); 
+}
+
+function runVBS() {
+        alert('Inside Run VBS');
         var shell = new ActiveXObject("WScript.Shell");
         shell.Exec("wscript C:\\Automation\\Execute.vbs"); 
 }
