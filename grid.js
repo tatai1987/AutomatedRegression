@@ -35,9 +35,9 @@ function prevTab(elem) {
 }
 
 function runProgram() {
-        alert(‘Hi’);
-        var shell = new ActiveXObject(“WScript.Shell”);
-        shell.Exec(“wscript C:\\Automation\\Execute.vbs”); 
+        alert('Hi');
+        var shell = new ActiveXObject("WScript.Shell");
+        shell.Exec("wscript C:\\Automation\\Execute.vbs"); 
 }
 
 //according menu

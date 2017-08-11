@@ -18,7 +18,7 @@ const (
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		writeToExcel()
+		//writeToExcel()
 		var urlvalue = r.URL.Path[1:]
 		if strings.Compare(urlvalue, "confirmation.html") == 0 {
 			if len(target) > 0 {
@@ -41,7 +41,7 @@ func main() {
 
 func writeToExcel() {
 
-	excelFileName := "/Automation/MDF.xlsx"
+	excelFileName := "AutomatedRegression/regressionTest/MDF.xlsx"
 	xlFile, err := xlsx.OpenFile(excelFileName)
 
 	if err != nil {
