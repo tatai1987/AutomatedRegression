@@ -278,7 +278,7 @@ strong {
 }
 
 .tile {
-  width: 95%;
+  width: 85%;
   display: inline-block;
   box-sizing: border-box;
   background: #fff;
@@ -2129,7 +2129,7 @@ strong {
             height: 100px;
             width: 150px;
             float: left;
-            margin: 0 5px 0 0;
+            margin: 6px 6px 0 0;
             padding: 2px;
         }
 
