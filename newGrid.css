@@ -118,6 +118,7 @@ span.round-tab:hover {
     border :2px solid #ccc;
     border-radius:5px;
     padding:10px;
+     margin-top: -2em;
 }
 .step33 {
     border:1px solid #ccc;
@@ -292,24 +293,43 @@ strong {
   color: #fff;
 }
 .tile.purple {
-  background: #5133ab;
+  background:  #9f00a7;
 }
-
+.tile.deeporange{
+  background: #e8773f;
+}
 .tile.red {
   background: #ac193d;
 }
-
+.tile.yellow{
+  background:  #ffc40d;
+}
+.tile.violet{
+  background: #ba1176;
+}
 .tile.green {
   background: #00a600;
 }
+.tile.othergreen{
+  background: #30c76c;
+}
+.tile.otheryellow{
+  background: #f7df2d;
+}
 .tile.blue {
-  background: #2672ec;
+  background:  #378ae8;
+}
+.tile.lightgreen{
+  background: #36e8c4;
 }
 .tile.blue:hover {
   background: #125acd;
 }
 .tile.orange {
   background: #dc572e;
+}
+.tile.otherRed{
+  background: #e83348;
 }
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
