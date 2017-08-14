@@ -35,12 +35,15 @@ function prevTab(elem) {
 }
 
 function updateMDF() {
+    alert('Hi');
     var excel = new ActiveXObject("Excel.Application");
+    var test_type= 'regression';
     if (test_type == 'regression') {
         var excel_file = excel.Workbooks.Open("C:\\Automation\\regression\\MDF.xlsx");
     }
     else {
         var excel_file = excel.Workbooks.Open("C:\\Automation\\smoke\\MDF.xlsx");
+        alert('Hi_1');
     }
 
     var excel_sheet = excel_file.Worksheets("Applications");
@@ -49,6 +52,8 @@ function updateMDF() {
     for (var i = 1; i <= rowSize; i++) {
         excel_sheet.Cells(i, 4).Value = 'No';
     }
+
+     alert('Hi_2');
 
     for (var i = 1; i <= rowSize; i++) {
         if (excel_sheet.Cells(i, 1).Value == 'PTE' && excel_sheet.Cells(i, 2).Value == 'NWPFE_AUTH') {
