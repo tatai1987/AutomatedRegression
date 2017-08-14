@@ -35,47 +35,49 @@ function prevTab(elem) {
 }
 
 function updateMDF() {
-    alert('Hi');
+    
     var excel = new ActiveXObject("Excel.Application");
     var test_type= 'regression';
+    var excel_file;
     if (test_type == 'regression') {
-        var excel_file = excel.Workbooks.Open("C:\\Automation\\regression\\MDF.xlsx");
+         excel_file = excel.Workbooks.Open("C:\\Automation\\regression\\MDF.xlsx");
     }
     else {
-        var excel_file = excel.Workbooks.Open("C:\\Automation\\smoke\\MDF.xlsx");
-        alert('Hi_1');
+         excel_file = excel.Workbooks.Open("C:\\Automation\\smoke\\MDF.xlsx");
+        
     }
 
     var excel_sheet = excel_file.Worksheets("Applications");
-
-    var rowSize = excel_sheet.Rows.Count;
-    for (var i = 1; i <= rowSize; i++) {
+    
+    
+    for (var i = 1; i <= 38; i++) {
         excel_sheet.Cells(i, 4).Value = 'No';
     }
 
-     alert('Hi_2');
-
-    for (var i = 1; i <= rowSize; i++) {
+    
+    for (var i = 1; i <= 38; i++) {
         if (excel_sheet.Cells(i, 1).Value == 'PTE' && excel_sheet.Cells(i, 2).Value == 'NWPFE_AUTH') {
             excel_sheet.Cells(i, 4).Value = 'Yes';
         }
     }
+   
 
     var excel_sheet = excel_file.Worksheets("Global");
     var rowSize = excel_sheet.Rows.Count;
-    for (var i = 1; i <= rowSize; i++) {
+    for (var i = 1; i <= 38; i++) {
         excel_sheet.Cells(i, 7).Value = 'N';
     }
 
-    for (var i = 1; i <= rowSize; i++) {
+    for (var i = 1; i <= 38; i++) {
         if (excel_sheet.Cells(i, 8).Value == 'NWPFE_AUTH') {
             excel_sheet.Cells(i, 7).Value = 'Y';
         }
     }
 
-    excel.Workbooks.Saved = true;
-    excel.Workbooks.Close = true;
-    excel.Workbooks.Application.Quit();
+    excel_file.save();
+    excel_file.Close();
+    excel.DisplayAlerts = false;
+    excel.Application.Quit();
 
 }
 
