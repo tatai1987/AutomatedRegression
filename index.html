@@ -5,6 +5,7 @@
     <script src="grid.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -225,13 +226,14 @@
                                              <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">SOF Devation Flow</span>
                                         </a>
                                     </div>
+                                  
                                     </div>
                                 </div>                                
                             </div>
                         </div>
                         <ul class="list-inline pull-right margin-top-1">
                             <li><button type="button" class="btn btn-primary next-step" onclick="updateMDF();">Save</button></li>
-                            <li><button type="button" class="btn btn-primary next-step">Reset</button></li>
+                            <li><button type="button" class="btn btn-primary next-step" onclick="readMRF();">Reset</button></li>
                             <li><button type="button" class="btn btn-default next-step" onclick="runVBS();">Execute Now</button></li>
                             <li><button type="button" class="btn btn-primary next-step">Scheduled for later</button></li>                        
                         </ul>
@@ -243,6 +245,7 @@
                             <hr>
                             <div id="accordion-container">
                                 <h2 class="accordion-header"> Upload Test Result</h2>
+                                  <div id="chartContainer" style="height: 300px; width: 100%;"></div>
                                 <div class="accordion-content">
                                   <label for="testResultFile">File input</label>
                                     <input type="file" id="testResultFile">
