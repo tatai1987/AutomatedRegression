@@ -48,14 +48,15 @@ function updateMDF() {
     }
 
     var excel_sheet = excel_file.Worksheets("Applications");
+    var xlUp = -4162;
+    var countrow= excel_sheet.cells(excel_sheet.rows.count,1).end(xlUp).row;
     
-    
-    for (var i = 1; i <= 38; i++) {
+    for (var i = 1; i <= countrow; i++) {
         excel_sheet.Cells(i, 4).Value = 'No';
     }
 
     
-    for (var i = 1; i <= 38; i++) {
+    for (var i = 1; i <= countrow; i++) {
         if (excel_sheet.Cells(i, 1).Value == 'PTE' && excel_sheet.Cells(i, 2).Value == 'NWPFE_AUTH') {
             excel_sheet.Cells(i, 4).Value = 'Yes';
         }
@@ -63,12 +64,13 @@ function updateMDF() {
    
 
     var excel_sheet = excel_file.Worksheets("Global");
-    var rowSize = excel_sheet.Rows.Count;
-    for (var i = 1; i <= 38; i++) {
+    var countrow= excel_sheet.cells(excel_sheet.rows.count,6).end(xlUp).row;
+    
+    for (var i = 1; i <= countrow; i++) {
         excel_sheet.Cells(i, 7).Value = 'N';
     }
 
-    for (var i = 1; i <= 38; i++) {
+    for (var i = 1; i <= countrow; i++) {
         if (excel_sheet.Cells(i, 8).Value == 'NWPFE_AUTH') {
             excel_sheet.Cells(i, 7).Value = 'Y';
         }
