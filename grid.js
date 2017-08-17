@@ -97,7 +97,7 @@ function readMRF() {
     var failCounter=0;
     var passCounter=0;
     for (var i = 1; i <= countrow; i++) {
-        alert(excel_sheet.Cells(i, 6).Value);
+        
         if(excel_sheet.Cells(i, 6).Value == 'Fail'){
             failCounter++;
         }
@@ -105,8 +105,7 @@ function readMRF() {
             passCounter++;
         }
     }
-    alert(failCounter);
-     alert(passCounter);
+   
     var chart = new CanvasJS.Chart("chartContainer",
     {
         theme: "theme2",
