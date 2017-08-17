@@ -109,27 +109,25 @@ function readMRF() {
      alert(passCounter);
     var chart = new CanvasJS.Chart("chartContainer",
     {
-    theme: "theme2",
-    title:{
-    text: "Execution Result"
+        theme: "theme2",
+        title:{
+        text: "Execution Result"
     },
+        animationEnabled: true,  
     data: [
-    {       
-    type: "pie",
-    showInLegend: true,
-    toolTipContent: "{y} - #percent %",
-    yValueFormatString: "#,##0,,.## Million",
-    legendText: "{indexLabel}",
-    dataPoints: [
-    {  y: passCounter, indexLabel: "Pass" },
-    {  y: failCounter, indexLabel: "Fail" }
+        {       
+            type: "doughnut",
+			startAngle: 60,                          
+			toolTipContent: "{legendText}: {y} - <strong>#percent% </strong>", 					
+			showInLegend: true,
+			dataPoints: [
+                     {  y: passCounter, indexLabel: "Pass" },
+                     {  y: failCounter, indexLabel: "Fail" }
+                ]
+        }
     ]
-    }
-    ]
-    });
+        });
     chart.render();
-    
-   
     excel_file.save();
     excel_file.Close();
     excel.DisplayAlerts = false;
