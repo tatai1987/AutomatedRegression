@@ -96,40 +96,48 @@ function readMRF() {
     var countrow= excel_sheet.cells(excel_sheet.rows.count,1).end(xlUp).row;
     var failCounter=0;
     var passCounter=0;
+    var  titleList= [];
+    var  testCaseIdList= [];
+    var  executionStatusList= [];
+    var  dateList= [];
+    var  failureReasonList= [];
+
     for (var i = 1; i <= countrow; i++) {
-        alert(excel_sheet.Cells(i, 6).Value);
+        
         if(excel_sheet.Cells(i, 6).Value == 'Fail'){
             failCounter++;
         }
         if(excel_sheet.Cells(i, 6).Value == 'Pass'){
             passCounter++;
         }
+        titleList.push(excel_sheet.Cells(i, 3).Value); 
+        testCaseIdList.push(excel_sheet.Cells(i, 4).Value);
+        executionStatusList.push(excel_sheet.Cells(i, 6).Value);
+        dateList.push(excel_sheet.Cells(i, 8).Value);
+        failureReasonList.push(excel_sheet.Cells(i,11).Value); 
     }
-    alert(failCounter);
-     alert(passCounter);
+
     var chart = new CanvasJS.Chart("chartContainer",
     {
-    theme: "theme2",
-    title:{
-    text: "Execution Result"
+        theme: "theme2",
+        title:{
+        text: "Execution Result"
     },
+        animationEnabled: true,  
     data: [
-    {       
-    type: "pie",
-    showInLegend: true,
-    toolTipContent: "{y} - #percent %",
-    yValueFormatString: "#,##0,,.## Million",
-    legendText: "{indexLabel}",
-    dataPoints: [
-    {  y: passCounter, indexLabel: "Pass" },
-    {  y: failCounter, indexLabel: "Fail" }
+        {       
+            type: "doughnut",
+			startAngle: 60,                          
+			toolTipContent: "{legendText}: {y} - <strong>#percent% </strong>", 					
+			showInLegend: true,
+			dataPoints: [
+                     {  y: passCounter, indexLabel: "Pass" },
+                     {  y: failCounter, indexLabel: "Fail" }
+                ]
+        }
     ]
-    }
-    ]
-    });
+        });
     chart.render();
-    
-   
     excel_file.save();
     excel_file.Close();
     excel.DisplayAlerts = false;
