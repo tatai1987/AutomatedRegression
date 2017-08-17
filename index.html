@@ -2,7 +2,7 @@
 <head>
     <title>Test Command Console</title>
     <link rel="stylesheet" href="newGrid.css">
-    <script src="grid.js"></script>
+    <script type="text/javascript" src="grid.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -11,10 +11,10 @@
 <body>
 <div class="container">
     <div class="row">
-		<section>
+	<section>
         <div class="wizard">
-            <div class="wizard-inner">
-                
+            <h2 center>Welcome to Automated Text Execution</h2>
+            <div class="wizard-inner">                
                 <ul class="nav nav-tabs" align='center' role="tablist">
                     <li role="presentation" class="active">
                         <a href="#step1" data-toggle="tab" aria-controls="Environment Health" role="tab" title="Step 1">
@@ -42,7 +42,7 @@
                 </ul>
             </div>
 
-            <form role="form">
+            <form role="form" id="test-console">
                 <div class="tab-content">
                     <div class="tab-pane active" role="tabpanel" id="step1">
                         <div class="step1">
@@ -142,15 +142,19 @@
                                         <h3 class="title">Environment</h3>
                                     </div>
                                     <div id="env-tab">
-                                        <a class="metrostyle orgmetro" style="cursor: pointer" href="../UserGUI/Users_List.aspx">
-                                            <input type="hidden" name="ctef1" value=""/>
-                                            <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">CTE-F1 </span>
+                                        <button class="metrostyle orgmetro btn-group" data-toggle="buttons" style="cursor: pointer" type="button" onclick="showSelected();">
+                                            <label class="btn">
+                                                <input type="radio" name="ctef1" value="CTE-F1" id="option1" autocomplete="off" checked>
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">CTE-F1 </span>
+                                                </input>
+                                            </label>
+                                        </button>
+                                        <a class="metrostyle eenmetro" style="cursor: pointer" href="#">
+                                            <input type="hidden" name="ctef2" value="CTE-F2"/>
+                                            <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">CTE-F2 </span>  
                                         </a>
-                                        <a class="metrostyle eenmetro" style="cursor: pointer" href="">
-                                            <input type="hidden" name="ctef2" value=""/>
-                                            <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">CTE-F2 </span>
-                                        </a>
-                                        <a style="cursor: pointer" class="metrostyle boometro" href="../Medical/Hospitals_List.aspx">
+                                        <a style="cursor: pointer" class="metrostyle boometro" href="#">
+                                            <input type="hidden" name="ctef2" value="CTE-M"/>
                                              <span style="color:white;float:left;margin-top:35px;margin-left:10px;margin-right:50px">CTE-M</span>
                                         </a>
                                         <a class="metrostyle reemetro" style="cursor: pointer" href="../Medical/Branchs_List.aspx">
@@ -178,13 +182,17 @@
                                         <h3 class="title">NWP Regression Suite</h3>
                                     </div>
                                     <div id="regression-tab">
-                                        <a class="metrostyle tile violet" style="cursor: pointer" href="../UserGUI/Users_List.aspx">
-                                            <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">NWP Smoke Test </span>
-                                        </a>
+                                        <button class="metrostyle tile violet" style="cursor: pointer" data-toggle="buttons">
+                                            <label class="btn">
+                                                <input type="radio" name="nwp-smoke-test" value="NWPFE_AUTH NWPFE_LIVE NWPFE_Preview" id="option1" autocomplete="off" checked>
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">NWP Smoke Test </span>
+                                                </input>
+                                            </label>    
+                                        </button>
                                         <a class="metrostyle eenmetro" style="cursor: pointer" href="">
                                             <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">NWP Regression Test </span>
                                         </a>
-                                        <a class="metrostyle reemetro" style="cursor: pointer" id="atg-smoketest" aria-disabled="true" href="../Medical/Branchs_List.aspx">
+                                        <a class="metrostyle reemetro" style="cursor: pointer" id="atg-smoketest" aria-disabled="true" href="#">
                                              <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px" >ATG Smoke Test </span>
                                         </a>
                                         <a style="cursor: pointer" class="metrostyle boometro" href="../Medical/Hospitals_List.aspx">
@@ -196,7 +204,7 @@
                                         <a class="metrostyle tile purple" style="cursor: pointer" href="../Medical/Branchs_List.aspx">
                                              <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">ICOW Regression Test </span>
                                         </a>
-                                        <a class="metrostyle tile yellow" style="cursor: pointer" aria-disabled="true" id="atg-regression" href="../Medical/Branchs_List.aspx">
+                                        <a class="metrostyle tile yellow" style="cursor: pointer" aria-disabled="true" id="atg-regression" href="#">
                                              <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">ATG Regression Test </span>
                                         </a>
                                         <a class="metrostyle yoometro" style="cursor: pointer" href="../Medical/Clinics_List.aspx">
@@ -239,15 +247,17 @@
                     
                     <div class="tab-pane" role="tabpanel" id="complete">
                         <div class="step44">
-                            <h5>Whats Next</h5>
-                            <hr>
-                            <div id="accordion-container">
-                                <h2 class="accordion-header"> Upload Test Result</h2>
-                                <div class="accordion-content">
-                                  <label for="testResultFile">File input</label>
-                                    <input type="file" id="testResultFile">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-primary active">
+                                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Radio 1 (preselected)
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="radio" name="options" id="option2" autocomplete="off"> Radio 2
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="radio" name="options" id="option3" autocomplete="off"> Radio 3
+                                </label>
                                 </div>
-                            </div>
                         </div>
                     </div>
                     <div class="clearfix"></div>

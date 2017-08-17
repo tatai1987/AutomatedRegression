@@ -331,6 +331,21 @@ strong {
 .tile.otherRed{
   background: #e83348;
 }
+#atg-smoketest .metrostyle:hover{
+  text-decoration: none;
+  color:#f47835;
+}
+.tileSelected {
+    height:100px;
+    width:100px;
+    background:black;
+    color:#fff;
+    position: relative;
+}
+  .btn-primary {
+    background-color: #603cba;
+    border-color: #603cba;
+  }
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

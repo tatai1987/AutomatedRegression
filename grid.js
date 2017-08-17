@@ -82,11 +82,13 @@ function updateMDF() {
 }
 
 function runVBS() {
-    alert('Inside Run VBS');
+    $('#test-console').submit(); 
     var shell = new ActiveXObject("WScript.Shell");
     shell.Exec("wscript C:\\Automation\\Execute.vbs");
 }
-
+function showSelected(){
+  console.info("i am here");    
+}
 //according menu
 
 $(document).ready(function () {
