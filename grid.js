@@ -48,14 +48,15 @@ function updateMDF() {
     }
 
     var excel_sheet = excel_file.Worksheets("Applications");
+    var xlUp = -4162;
+    var countrow= excel_sheet.cells(excel_sheet.rows.count,1).end(xlUp).row;
     
-    
-    for (var i = 1; i <= 38; i++) {
+    for (var i = 1; i <= countrow; i++) {
         excel_sheet.Cells(i, 4).Value = 'No';
     }
 
     
-    for (var i = 1; i <= 38; i++) {
+    for (var i = 1; i <= countrow; i++) {
         if (excel_sheet.Cells(i, 1).Value == 'PTE' && excel_sheet.Cells(i, 2).Value == 'NWPFE_AUTH') {
             excel_sheet.Cells(i, 4).Value = 'Yes';
         }
@@ -63,17 +64,72 @@ function updateMDF() {
    
 
     var excel_sheet = excel_file.Worksheets("Global");
-    var rowSize = excel_sheet.Rows.Count;
-    for (var i = 1; i <= 38; i++) {
+    var countrow= excel_sheet.cells(excel_sheet.rows.count,6).end(xlUp).row;
+    
+    for (var i = 1; i <= countrow; i++) {
         excel_sheet.Cells(i, 7).Value = 'N';
     }
 
-    for (var i = 1; i <= 38; i++) {
+    for (var i = 1; i <= countrow; i++) {
         if (excel_sheet.Cells(i, 8).Value == 'NWPFE_AUTH') {
             excel_sheet.Cells(i, 7).Value = 'Y';
         }
     }
 
+    excel_file.save();
+    excel_file.Close();
+    excel.DisplayAlerts = false;
+    excel.Application.Quit();
+
+}
+
+function readMRF() {
+    
+    var excel = new ActiveXObject("Excel.Application");
+
+    var excel_file;
+
+    excel_file = excel.Workbooks.Open("C:\\Automation\\DataFiles\\MRF.xlsx");
+    
+    var excel_sheet = excel_file.Worksheets("Execution_Report");
+    var xlUp = -4162;
+    var countrow= excel_sheet.cells(excel_sheet.rows.count,1).end(xlUp).row;
+    var failCounter=0;
+    var passCounter=0;
+    for (var i = 1; i <= countrow; i++) {
+        alert(excel_sheet.Cells(i, 6).Value);
+        if(excel_sheet.Cells(i, 6).Value == 'Fail'){
+            failCounter++;
+        }
+        if(excel_sheet.Cells(i, 6).Value == 'Pass'){
+            passCounter++;
+        }
+    }
+    alert(failCounter);
+     alert(passCounter);
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+    theme: "theme2",
+    title:{
+    text: "Execution Result"
+    },
+    data: [
+    {       
+    type: "pie",
+    showInLegend: true,
+    toolTipContent: "{y} - #percent %",
+    yValueFormatString: "#,##0,,.## Million",
+    legendText: "{indexLabel}",
+    dataPoints: [
+    {  y: passCounter, indexLabel: "Pass" },
+    {  y: failCounter, indexLabel: "Fail" }
+    ]
+    }
+    ]
+    });
+    chart.render();
+    
+   
     excel_file.save();
     excel_file.Close();
     excel.DisplayAlerts = false;
