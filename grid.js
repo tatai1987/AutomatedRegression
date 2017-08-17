@@ -96,6 +96,12 @@ function readMRF() {
     var countrow= excel_sheet.cells(excel_sheet.rows.count,1).end(xlUp).row;
     var failCounter=0;
     var passCounter=0;
+    var  titleList= [];
+    var  testCaseIdList= [];
+    var  executionStatusList= [];
+    var  dateList= [];
+    var  failureReasonList= [];
+
     for (var i = 1; i <= countrow; i++) {
         
         if(excel_sheet.Cells(i, 6).Value == 'Fail'){
@@ -104,8 +110,13 @@ function readMRF() {
         if(excel_sheet.Cells(i, 6).Value == 'Pass'){
             passCounter++;
         }
+        titleList.push(excel_sheet.Cells(i, 3).Value); 
+        testCaseIdList.push(excel_sheet.Cells(i, 4).Value);
+        executionStatusList.push(excel_sheet.Cells(i, 6).Value);
+        dateList.push(excel_sheet.Cells(i, 8).Value);
+        failureReasonList.push(excel_sheet.Cells(i,11).Value); 
     }
-   
+
     var chart = new CanvasJS.Chart("chartContainer",
     {
         theme: "theme2",
