@@ -35,18 +35,19 @@ function prevTab(elem) {
 }
 
 function updateMDF() {
-    
-    var excel = new ActiveXObject("Excel.Application");
-    var test_type= 'regression';
+    var suite = document.getElementsByName("suite")[0].value;
+    var idForSuite = document.getElementsByName("suite")[0].getAttribute( 'id' );
+    var environment = document.getElementsByName("environment")[0].value;
     var excel_file;
-    if (test_type == 'regression') {
-         excel_file = excel.Workbooks.Open("C:\\Automation\\regression\\MDF.xlsx");
+    var excel = new ActiveXObject("Excel.Application");
+    
+    if(idForSuite.indexOf("smoke") !== -1){
+         excel_file = excel.Workbooks.Open("C:\\Automation\\smoke\\MDF.xlsx");
     }
     else {
-         excel_file = excel.Workbooks.Open("C:\\Automation\\smoke\\MDF.xlsx");
-        
+         excel_file = excel.Workbooks.Open("C:\\Automation\\regression\\MDF.xlsx");
     }
-
+    
     var excel_sheet = excel_file.Worksheets("Applications");
     var xlUp = -4162;
     var countrow= excel_sheet.cells(excel_sheet.rows.count,1).end(xlUp).row;
@@ -55,14 +56,12 @@ function updateMDF() {
         excel_sheet.Cells(i, 4).Value = 'No';
     }
 
-    
     for (var i = 1; i <= countrow; i++) {
-        if (excel_sheet.Cells(i, 1).Value == 'PTE' && excel_sheet.Cells(i, 2).Value == 'NWPFE_AUTH') {
+        if (excel_sheet.Cells(i, 1).Value == environment && excel_sheet.Cells(i, 2).Value == 'NWPFE_AUTH') {
             excel_sheet.Cells(i, 4).Value = 'Yes';
         }
     }
    
-
     var excel_sheet = excel_file.Worksheets("Global");
     var countrow= excel_sheet.cells(excel_sheet.rows.count,6).end(xlUp).row;
     
