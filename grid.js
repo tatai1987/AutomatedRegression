@@ -60,14 +60,14 @@ function updateMDF() {
 
         if(suites.length>1){
                 for (var i = 2; i <= countrow; i++) {
-                     if(excel_sheet.Cells(i, 8).Value == suites[0] ||  excel_sheet.Cells(i, 8).Value == suites[1] || excel_sheet.Cells(i, 8).Value == suites[2]){
+                     if(excel_sheet.Cells(i, 8).Value.indexOf(suites[0]) !== -1 ||  excel_sheet.Cells(i, 8).Value.indexOf(suites[1]) !== -1  || excel_sheet.Cells(i, 8).Value.indexOf(suites[2]) !== -1 ){
                         excel_sheet.Cells(i, 7).Value = 'Y';
                     }
                 }
         }
         else{
             for (var i = 2; i <= countrow; i++) {
-                if (excel_sheet.Cells(i, 8).Value == suites[0]){
+                if (excel_sheet.Cells(i, 8).Value.indexOf(suites[0]) !== -1 ){
                     excel_sheet.Cells(i, 7).Value = 'Y';
                     }
                 }
