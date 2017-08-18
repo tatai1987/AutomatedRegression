@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -16,7 +15,7 @@ const (
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-	
+
 		var urlvalue = r.URL.Path[1:]
 		if strings.Compare(urlvalue, "confirmation.html") == 0 {
 			if len(target) > 0 {
@@ -35,6 +34,4 @@ func main() {
 		port = DEFAULT_PORT
 	}
 	log.Fatal(http.ListenAndServe(":"+port, nil))
-}
-
 }

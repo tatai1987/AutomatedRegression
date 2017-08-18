@@ -10,16 +10,19 @@ function updateMDF() {
     var idForSuite = document.getElementsByName("suite")[0].getAttribute( 'id' );
     var environment = document.getElementsByName("environment")[0].value;
     var excel_file;
+    var suites = suite.split(" ");
+    alert(environment);
+    alert(suites[0]);
+    
     var excel = new ActiveXObject("Excel.Application");
 
-    var suites = suite.split(" ");
-   
     
+ 
     if(idForSuite.indexOf("smoke") !== -1){
-         excel_file = excel.Workbooks.Open("C:\\Automation\\smoke\\MDF.xlsx");
+         excel_file = excel.Workbooks.Open("C:\\Automation\\Smoke\\DataFiles\\MDF.xlsx");
     }
     else {
-         excel_file = excel.Workbooks.Open("C:\\Automation\\regression\\MDF.xlsx");
+         excel_file = excel.Workbooks.Open("C:\\Automation\\Regression\\DataFiles\\MDF.xlsx");
     }
     
     var excel_sheet = excel_file.Worksheets("Applications");
@@ -80,10 +83,10 @@ function updateMDF() {
     var shell = new ActiveXObject("WScript.Shell");
 
      if(idForSuite.indexOf("smoke") !== -1){
-        shell.Exec("wscript C:\\Automation\\smoke\\Execute.vbs");
+        shell.Exec("wscript C:\\Automation\\Smoke\\Execute.vbs");
     }
     else {
-        shell.Exec("wscript C:\\Automation\\regression\\Execute.vbs");
+        shell.Exec("wscript C:\\Automation\\Regression\\Execute.vbs");
     }
     
 
@@ -95,7 +98,7 @@ function readMRF() {
 
     var excel_file;
 
-    excel_file = excel.Workbooks.Open("C:\\Automation\\smoke\\DataFiles\\MRF.xlsx");
+    excel_file = excel.Workbooks.Open("C:\\Automation\\Smoke\\DataFiles\\MRF.xlsx");
     
     var excel_sheet = excel_file.Worksheets("Execution_Report");
     var xlUp = -4162;
