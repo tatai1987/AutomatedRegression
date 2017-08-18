@@ -19,6 +19,7 @@ const (
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		//writeToExcel()
+
 		var urlvalue = r.URL.Path[1:]
 		if strings.Compare(urlvalue, "confirmation.html") == 0 {
 			if len(target) > 0 {
