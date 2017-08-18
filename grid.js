@@ -43,7 +43,6 @@ function updateMDF() {
 
     var suites = suite.split(" ");
    
-    
     if(idForSuite.indexOf("smoke") !== -1){
          excel_file = excel.Workbooks.Open("C:\\Automation\\smoke\\MDF.xlsx");
     }
@@ -59,8 +58,6 @@ function updateMDF() {
         excel_sheet.Cells(i, 4).Value = 'No';
     }
            
-    alert(environment);
-    alert(suites[0]);
     if(suites.length>1){
             for (var i = 2; i <= countrow; i++) {
                 if (excel_sheet.Cells(i, 1).Value == environment && (excel_sheet.Cells(i, 2).Value == suites[0] || excel_sheet.Cells(i, 2).Value == suites[1] || excel_sheet.Cells(i, 2).Value == suites[2])) {
@@ -108,6 +105,15 @@ function updateMDF() {
     excel_file.Close();
     excel.DisplayAlerts = false;
     excel.Application.Quit();
+    var shell = new ActiveXObject("WScript.Shell");
+
+     if(idForSuite.indexOf("smoke") !== -1){
+        shell.Exec("wscript C:\\Automation\\smoke\\Execute.vbs");
+    }
+    else {
+        shell.Exec("wscript C:\\Automation\\regression\\Execute.vbs");
+    }
+    
 
 }
 
@@ -173,11 +179,6 @@ function readMRF() {
 
 }
 
-function runVBS() {
-    $('#test-console').submit(); 
-    var shell = new ActiveXObject("WScript.Shell");
-    shell.Exec("wscript C:\\Automation\\Execute.vbs");
-}
 function showSelected(){
   console.info("i am here");    
 }
