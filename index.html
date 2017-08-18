@@ -138,7 +138,7 @@
                         <div class="step2">
                             <div class="step_21">   
                                 <div class="row">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4" id="tab-env-health">
                                     <div class="tile purple">
                                         <h3 class="title">Select Environment</h3>
                                     </div>
@@ -166,7 +166,7 @@
                                         </button>
                                         <button class="metrostyle reemetro btn-group" data-toggle="buttons" style="cursor: pointer">
                                             <label class="btn">
-                                                <input type="radio" name="environment" value="PTE" id="pte" checked autocomplete="off">
+                                                <input type="radio" name="environment" value="PTE" id="pte" autocomplete="off">
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">PTE</span>
                                                 </input>
                                             </label>    
@@ -180,14 +180,14 @@
                                         </button>
                                         <button style="cursor: pointer" class="metrostyle tile purple btn-group" data-toggle="buttons">
                                             <label class="btn">
-                                                <input type="radio" name="environment" value="PPE1">      
+                                                <input type="radio" name="environment" value="Sprintly" checked>      
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:70px">Sprintly</span>
                                                </input>
                                             </label>    
                                         </button>
                                         <button style="cursor: pointer" class="metrostyle tile yellow btn-group" data-toggle="buttons">
                                             <label class="btn">
-                                                <input type="radio" name="environment" value="Sprintly">      
+                                                <input type="radio" name="environment" value="Sprintly2">      
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:70px">Sprintly2</span>
                                                 </input>
                                             </label>    
@@ -208,7 +208,7 @@
                                         </button>
                                     </div>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4" id="tab-execution-console">
                                     <div class="tile otheryellow">
                                         <h3 class="title">NWP Suite</h3>
                                     </div>
@@ -264,7 +264,7 @@
                                         </button>
                                     </div>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4" id="tab-results">
                                     <div class="tile orange">
                                         <h3 class="title">SOF Suite</h3>
                                     </div>
@@ -311,10 +311,10 @@
                             </div>
                         </div>
                         <ul class="list-inline pull-right margin-top-1">
-                            <li><button type="button" class="btn btn-primary next-step" onclick="updateMDF();">Save</button></li>
-                            <li><button type="button" class="btn btn-primary next-step" onclick="readMRF();">Reset</button></li>
-                            <li><button type="button" class="btn btn-default next-step" onclick="runVBS();">Execute Now</button></li>
-                            <li><button type="button" class="btn btn-primary next-step">Scheduled for later</button></li>                        
+                            <li><button type="button" id="save" class="btn btn-primary next-step" onclick="updateMDF();">Save</button></li>
+                            <li><button type="button" id="reset" class="btn btn-primary next-step" onclick="readMRF();">Reset</button></li>
+                            <li><button type="button" id="execute" class="btn btn-default next-step" onclick="runVBS();">Execute Now</button></li>
+                            <li><button type="button" id="schedule-later" class="btn btn-primary next-step">Scheduled for later</button></li>                        
                         </ul>
                     </div>
                     
