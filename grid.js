@@ -43,6 +43,7 @@ function updateMDF() {
 
     var suites = suite.split(" ");
    
+    
     if(idForSuite.indexOf("smoke") !== -1){
          excel_file = excel.Workbooks.Open("C:\\Automation\\smoke\\MDF.xlsx");
     }
@@ -123,7 +124,7 @@ function readMRF() {
 
     var excel_file;
 
-    excel_file = excel.Workbooks.Open("C:\\Automation\\DataFiles\\MRF.xlsx");
+    excel_file = excel.Workbooks.Open("C:\\Automation\\smoke\\DataFiles\\MRF.xlsx");
     
     var excel_sheet = excel_file.Worksheets("Execution_Report");
     var xlUp = -4162;
