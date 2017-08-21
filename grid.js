@@ -6,9 +6,9 @@ function prevTab(elem) {
 }
 
 function updateMDF() {
-    var suite = document.getElementsByName("suite")[0].value;
+    var suite = $('input[name=suite]:checked', '#tab-execution-console').val();
     var idForSuite = document.getElementsByName("suite")[0].getAttribute( 'id' );
-    var environment = document.getElementsByName("environment")[0].value;
+    var environment = $('input[name=environment]:checked', '#tab-env-health').val();
     var excel_file;
     var suites = suite.split(" ");
     alert(environment);
