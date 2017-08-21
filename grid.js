@@ -6,9 +6,9 @@ function prevTab(elem) {
 }
 
 function updateMDF() {
-    var suite = $('input[name=suite]:checked', '#tab-execution-console').val();
+    var suite = document.getElementsByName("suite")[0].value;
     var idForSuite = document.getElementsByName("suite")[0].getAttribute( 'id' );
-    var environment = $('input[name=environment]:checked', '#tab-env-health').val();
+    var environment = document.getElementsByName("environment")[0].value;
     var excel_file;
     var suites = suite.split(" ");
     alert(environment);
@@ -16,8 +16,6 @@ function updateMDF() {
     
     var excel = new ActiveXObject("Excel.Application");
 
-    
- 
     if(idForSuite.indexOf("smoke") !== -1){
          excel_file = excel.Workbooks.Open("C:\\Automation\\Smoke\\DataFiles\\MDF.xlsx");
     }
@@ -97,12 +95,12 @@ function readMRF() {
     var excel = new ActiveXObject("Excel.Application");
 
     var excel_file;
-
+    
     excel_file = excel.Workbooks.Open("C:\\Automation\\Smoke\\DataFiles\\MRF.xlsx");
     
     var excel_sheet = excel_file.Worksheets("Execution_Report");
     var xlUp = -4162;
-    var countrow= excel_sheet.cells(excel_sheet.rows.count,1).end(xlUp).row;
+    var countrow= excel_sheet.cells(excel_sheet.rows.count,6).end(xlUp).row;
     var failCounter=0;
     var passCounter=0;
     var  titleList= [];
@@ -110,7 +108,7 @@ function readMRF() {
     var  executionStatusList= [];
     var  dateList= [];
     var  failureReasonList= [];
-
+     
     for (var i = 1; i <= countrow; i++) {
         
         if(excel_sheet.Cells(i, 6).Value == 'Fail'){
@@ -125,7 +123,7 @@ function readMRF() {
         dateList.push(excel_sheet.Cells(i, 8).Value);
         failureReasonList.push(excel_sheet.Cells(i,11).Value); 
     }
-
+      
     var chart = new CanvasJS.Chart("chartContainer",
     {
         theme: "theme2",
