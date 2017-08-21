@@ -70,14 +70,14 @@ func main() {
 	session.SetMode(mgo.Monotonic, true)
 
 	c := session.DB(database).C("people")
-	err = c.Insert(&Person{"Ale", "+55 53 8116 9639"},
-		&Person{"Cla", "+55 53 8402 8510"})
+	err = c.Insert(&Person{"Pragati", "+919535494382"},
+		&Person{"Neha", "+919535038890"})
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	result := Person{}
-	err = c.Find(bson.M{"name": "Ale"}).One(&result)
+	err = c.Find(bson.M{"name": "Pragati"}).One(&result)
 	if err != nil {
 		log.Fatal(err)
 	}
