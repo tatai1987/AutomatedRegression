@@ -134,7 +134,7 @@
                         </div>
                         </div>
                     </div>
-                    <div class="tab-pane" role="tabpanel" id="step2">
+                   <div class="tab-pane" role="tabpanel" id="step2">
                         <div class="step2">
                             <div class="step_21">   
                                 <div class="row">
@@ -142,170 +142,152 @@
                                     <div class="tile purple">
                                         <h3 class="title">Select Environment</h3>
                                     </div>
-                                    <div id="env-tab">
-                                        <button class="metrostyle orgmetro btn-group" data-toggle="buttons" style="cursor: pointer" onclick="showSelected();">
-                                            <label class="btn">
-                                                <input type="radio" name="environment" value="CTE-F1" id="option1" checked autocomplete="off" >
+                                    <div id="env-tab btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary metrostyle orgmetro  tile orange btn-group" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F1" id="option1" autocomplete="off" >
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">CTE-F1 </span>
                                                 </input>                            
                                             </label>
-                                        </button>
-                                        <button class="metrostyle eenmetro btn-group" data-toggle="buttons" style="cursor: pointer" >
-                                            <label class="btn">
+                                                                                
+                                            <label class="btn metrostyle eenmetro btn-group tile green btn-primary" style="cursor: pointer">
                                                 <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">CTE-F2 </span>  
                                                 </input>
                                             </label>
-                                        </button>
-                                        <button style="cursor: pointer" class="metrostyle boometro btn-group" data-toggle="buttons">
-                                            <label class="btn">
+                                        
+                                            <label class="btn metrostyle boometro btn-group tile purple btn-primary" style="cursor: pointer">
                                                 <input type="radio" name="environment" value="CTE-M">
                                                     <span style="color:white;float:left;margin-top:35px;margin-left:10px;margin-right:50px">CTE-M</span>
                                                 </input>
                                             </label>
-                                        </button>
-                                        <button class="metrostyle reemetro btn-group" data-toggle="buttons" style="cursor: pointer">
-                                            <label class="btn">
+                                        
+                                        
+                                            <label class="btn metrostyle reemetro btn-group tile otherRed btn-primary" style="cursor: pointer">
                                                 <input type="radio" name="environment" value="PTE" id="pte" autocomplete="off">
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">PTE</span>
                                                 </input>
                                             </label>    
-                                        </button>
-                                        <button class="metrostyle yoometro btn-group" data-toggle="buttons" style="cursor: pointer">
-                                            <label class="btn">
+                                        
+                                        
+                                            <label class="btn metrostyle yoometro btn-group tile btn-primary" style="cursor: pointer">
                                                 <input type="radio" name="environment" value="PPE1"> 
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">PPE-1</span>
                                                 </input>
                                             </label>    
-                                        </button>
-                                        <button style="cursor: pointer" class="metrostyle tile purple btn-group" data-toggle="buttons">
-                                            <label class="btn">
-                                                <input type="radio" name="environment" value="Sprintly" checked>      
+                                        
+                                            <label class="btn metrostyle othergreen btn-group tile btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="Sprintly">      
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:70px">Sprintly</span>
                                                </input>
                                             </label>    
-                                        </button>
-                                        <button style="cursor: pointer" class="metrostyle tile yellow btn-group" data-toggle="buttons">
-                                            <label class="btn">
+                                        
+                                            <label class="btn metrostyle yellow btn-group tile btn-primary" style="cursor: pointer">
                                                 <input type="radio" name="environment" value="Sprintly2">      
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:70px">Sprintly2</span>
                                                 </input>
                                             </label>    
-                                        </button>
-                                        <button style="cursor: pointer" class="metrostyle tile deeporange btn-group" data-toggle="buttons">
-                                            <label class="btn">
+                                        
+                                            <label class="btn btn-primary metrostyle tile deeporange btn-group" style="cursor: pointer">
                                                 <input type="radio" name="environment" value="Weekly">      
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:70px">Weekly</span>
                                                 </input>
                                             </label>
-                                        </button>
-                                        <button style="cursor: pointer" class="metrostyle metrostylelarge tile otherRed btn-group" data-toggle="buttons">
-                                            <label class="btn">
+                                                                                
+                                            <label class="btn metrostyle metrostylelarge tile otherRed btn-group btn-primary" style="cursor: pointer" >
                                                 <input type="radio" name="environment" value="Weekly2">     
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:70px">Weekly2</span>
                                                 </input>
                                             </label>
-                                        </button>
+                                        
                                     </div>
                                     </div>
                                     <div class="col-sm-4" id="tab-execution-console">
                                     <div class="tile otheryellow">
                                         <h3 class="title">NWP Suite</h3>
                                     </div>
-                                    <div id="regression-tab">
-                                        <button class="metrostyle tile violet" style="cursor: pointer" data-toggle="buttons">
-                                            <label class="btn">
-                                                <input type="radio" name="suite" value="NWPFE_AUTH NWPFE_LIVE NWPFE_Preview" id="smoke1" autocomplete="off" checked>
+                                    <div id="regression-tab" data-toggle="buttons">                                        
+                                            <label class="btn metrostyle violet btn-group tile btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="suite" value="NWPFE_AUTH NWPFE_LIVE NWPFE_Preview" id="smoke1" autocomplete="off">
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">NWP Smoke Test </span>
                                                 </input>
                                             </label>    
-                                        </button>
-                                        <button class="metrostyle eenmetro" style="cursor: pointer" data-toggle="buttons">
-                                            <label class="btn">
+                                        
+                                            <label class="btn metrostyle eenmetro btn-group tile lightgreen btn-primary" style="cursor: pointer">
                                                 <input type="radio" name="suite" value="NWPFE_AUTH NWPFE_LIVE NWPFE_Preview" id="regression1" autocomplete="off">
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">NWP Regression Test </span>
                                                 </input>
                                             </label>    
-                                        </button>
-                                        <button class="metrostyle reemetro" style="cursor: pointer" data-toggle="buttons" id="atg-smoketest">
-                                            <label class="btn"> 
-                                                <input type="radio" name="suite" value="" id="option3" autocomplete="off"> 
+                                                                              
+                                            <label class="btn metrostyle reemetro btn-group tile red btn-primary" style="cursor: pointer"> 
+                                                <input type="radio" name="suite" value="" id="atg-smoketest" autocomplete="off"> 
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px" >ATG Smoke Test </span>
                                                 </input>
                                             </label>    
-                                        </button>
-                                        <button class="metrostyle orgmetro" style="cursor: pointer" data-toggle="buttons">
-                                            <label class="btn"> 
+                                        
+                                        
+                                            <label class="btn metrostyle orgmetro btn-group tile othergreen btn-primary" style="cursor: pointer"> 
                                                     <input type="radio" name="suite" value="CMS" id="smoke2" autocomplete="off">  
                                                 <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">WCS Smoke Test</span>
                                                 </input>
                                             </label>
-                                        </button>
-                                        <button class="metrostyle tile purple" style="cursor: pointer" data-toggle="buttons">
-                                            <label class="btn"> 
+                                        
+                                        
+                                            <label class="btn btn-group btn-primary metrostyle tile purple" style="cursor: pointer"> 
                                                 <input type="radio" name="suite" value="ICOW" id="regression2" autocomplete="off">  
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">ICOW Regression Test </span>
                                                 </input>
                                             </label>
-                                        </button>
-                                        <button class="metrostyle tile yellow" style="cursor: pointer" id="atg-regression" data-toggle="buttons">
-                                            <label class="btn">  
-                                                <input type="radio" name="suite" value="" id="option7" autocomplete="off">  
+                                                                                
+                                            <label class="btn btn-group btn-primary metrostyle tile yellow" style="cursor: pointer">  
+                                                <input type="radio" name="suite" value="" id="atg-regression" autocomplete="off">  
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">ATG Regression Test </span>
                                               </input>
                                             </label>
-                                        </button>
-                                        <button class="metrostyle yoometro metrostylelarge" style="cursor: pointer" data-toggle="buttons" >
-                                            <label class="btn">  
+                                                                                
+                                            <label class="btn btn-primary metrostyle yoometro tile metrostylelarge" style="cursor: pointer">  
                                                 <input type="radio" name="suite" value="CMS" id="regression3" autocomplete="off">  
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">WCS RegressionTest</span>
                                                 </input>
                                             </label>
-                                        </button>
                                     </div>
                                     </div>
                                     <div class="col-sm-4" id="tab-results">
                                     <div class="tile orange">
                                         <h3 class="title">SOF Suite</h3>
                                     </div>
-                                    <div id="regression-tab">
-                                        <button class="metrostyle orgmetro" style="cursor: pointer" data-toggle="buttons">
-                                            <label class="btn">  
+                                    <div id="regression-tab" data-toggle="buttons">
+                                        
+                                            <label class="btn metrostyle orgmetro tile purple btn-primary" style="cursor: pointer">  
                                                 <input type="radio" name="nwp-smoke-test" value="NWPFE_AUTH NWPFE_LIVE NWPFE_Preview" id="sofRegression" autocomplete="off">  
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">SOF Smoke Pack </span>
                                                 </input>
                                             </label>
-                                        </button>
-                                        <button class="metrostyle eenmetro" style="cursor: pointer" data-toggle="buttons">
-                                            <label class="btn">  
+                                        
+                                            <label class="btn metrostyle eenmetro tile yellow btn-primary" style="cursor: pointer">  
                                                <input type="radio" name="nwp-smoke-test" value="NWPFE_AUTH NWPFE_LIVE NWPFE_Preview" id="sofRegression" autocomplete="off">    
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">Single Fulfilment Unit Regression Pack </span>
                                                 </input>
                                             </label>
-                                        </button>
-                                        <button style="cursor: pointer" class="metrostyle boometro" data-toggle="buttons">
-                                            <label class="btn"> 
+                                                                                
+                                            <label class="btn metrostyle boometro tile orange btn-primary" style="cursor: pointer"> 
                                                 <input type="radio" name="nwp-smoke-test" value="NWPFE_AUTH NWPFE_LIVE NWPFE_Preview" id="sofRegression" autocomplete="off">  
                                                     <span style="color:white;float:left;margin-top:35px;margin-left:10px;margin-right:50px">Multiple Fulfilment Unit Regression Pack</span>
                                                 </input>
                                             </label>
-                                        </button>
-                                        <button class="metrostyle reemetro" style="cursor: pointer" data-toggle="buttons">
-                                            <label class="btn"> 
+                                        
+                                            <label class="btn metrostyle reemetro btn-primary tile green" style="cursor: pointer"> 
                                                 <input type="radio" name="nwp-smoke-test" value="NWPFE_AUTH NWPFE_LIVE NWPFE_Preview" id="sofRegression" autocomplete="off">  
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">SOF Order Happy Flow </span>
                                                 </input>
                                             </label>                                        
-                                        </button>
-                                        <button class="metrostyle metrostylelarge yoometro" style="cursor: pointer" data-toggle="buttons">
-                                            <label class="btn"> 
+                                                                                
+                                            <label class="btn metrostyle metrostylelarge yoometro btn-primary tile otherRed" style="cursor: pointer"> 
                                                 <input type="radio" name="nwp-smoke-test" value="NWPFE_AUTH NWPFE_LIVE NWPFE_Preview" id="sofRegression" autocomplete="off">  
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">SOF Devation Flow</span>
                                                 </input>
                                             </label>
-                                        </button>
                                     </div>
-                                  
+                            
                                     </div>
                                 </div>                                
                             </div>
@@ -319,13 +301,10 @@
                     </div>
                     
                     <div class="tab-pane" role="tabpanel" id="complete">
-                        <div class="step44">
-
-                            
+                        <div class="step44">                            
                              <div id="accordion-container">
                                 <div id="chartContainer" style="height: 300px; width: 100%;"></div>   
-                            
-                </div>
+                            </div>
             </form>
         </div>
     </section>
