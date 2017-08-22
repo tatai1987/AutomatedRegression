@@ -11,8 +11,6 @@ function updateMDF() {
     var environment =  $('input[name=environment]:checked', '#tab-env-health').val();
     var excel_file;
     var suites = suite.split(" ");
-    alert(environment);
-    alert(suites[0]);
     
     var excel = new ActiveXObject("Excel.Application");
 
