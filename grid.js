@@ -126,7 +126,11 @@ function readMRF() {
 $('#dyn-table').html('<table class="table"><tbody></tbody></table>');
 
 for (var i = 0; i < countrow; i++) {
-    
+    console.info(failureReasonList[i]);
+    if(failureReasonList[i] ==undefined ){
+        failureReasonList[i]=' ';
+    }
+    console.info(failureReasonList[i]);
     $('#dyn-table tbody').append( '<tr><td>' + titleList[i]
                         + '</td> <td>'+ testCaseIdList[i]
                         + ' </td> <td>'+ executionStatusList[i]
