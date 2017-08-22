@@ -131,11 +131,11 @@ for (var i = 0; i < countrow; i++) {
         failureReasonList[i]=' ';
     }
     console.info(failureReasonList[i]);
-    $('#dyn-table tbody').append( '<tr><td>' + titleList[i]
-                        + '</td> <td>'+ testCaseIdList[i]
-                        + ' </td> <td>'+ executionStatusList[i]
-                        + ' </td> <td>'+ dateList[i]
-                        + ' </td> <td>'+ failureReasonList[i]
+    $('#dyn-table tbody').append( '<tr><td class="active">' + titleList[i]
+                        + '</td> <td class="success">'+ testCaseIdList[i]
+                        + ' </td> <td class="warning">'+ executionStatusList[i]
+                        + ' </td> <td class="danger">'+ dateList[i]
+                        + ' </td> <td class="info">'+ failureReasonList[i]
                         + ' </td> </tr>')
 }
 
