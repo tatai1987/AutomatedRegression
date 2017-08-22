@@ -1,12 +1,11 @@
 package main
 
 import (
-	"fmt"
+	
 	"log"
-	"time"
-
-	mgo "gopkg.in/mgo.v2"
-	"gopkg.in/mgo.v2/bson"
+	"net/http"
+	"os"
+	"strings"
 )
 
 var target string
@@ -16,7 +15,7 @@ const (
 )
 
 //const MongoDb details
-const (
+/*const (
 	hosts    = "127.0.0.1:27017"
 	database = "ikeasocialapp"
 	//username   = "admin"
@@ -27,10 +26,10 @@ const (
 type Person struct {
 	Name  string
 	Phone string
-}
+}*/
 
 func main() {
-	/*http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 
 		var urlvalue = r.URL.Path[1:]
 		if strings.Compare(urlvalue, "confirmation.html") == 0 {
@@ -49,9 +48,9 @@ func main() {
 	if port = os.Getenv("PORT"); len(port) == 0 {
 		port = DEFAULT_PORT
 	}
-	log.Fatal(http.ListenAndServe(":"+port, nil))*/
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 
-	info := &mgo.DialInfo{
+	/*info := &mgo.DialInfo{
 		Addrs:    []string{hosts},
 		Timeout:  60 * time.Second,
 		Database: database,
@@ -82,6 +81,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println("Phone:", result.Phone)
+	fmt.Println("Phone:", result.Phone)*/
 
 }
