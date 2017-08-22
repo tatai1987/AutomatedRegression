@@ -123,8 +123,19 @@ function readMRF() {
         dateList.push(excel_sheet.Cells(i, 8).Value);
         failureReasonList.push(excel_sheet.Cells(i,11).Value); 
     }
-      
-    var chart = new CanvasJS.Chart("chartContainer",
+$('#dyn-table').html('<table class="table"><tbody></tbody></table>');
+
+for (var i = 1; i < countrow; i++) {
+    
+    $('#dyn-table tbody').append( '<tr><td>' + titleList[i]
+                        + '</td> <td>'+ testCaseIdList[i]
+                        + ' </td> <td>'+ executionStatusList[i]
+                        + ' </td> <td>'+ dateList[i]
+                        + ' </td> <td>'+ failureReasonList[i]
+                        + ' </td> </tr>')
+}
+
+        var chart = new CanvasJS.Chart("chartContainer",
     {
         theme: "theme2",
         title:{
@@ -149,11 +160,10 @@ function readMRF() {
     excel_file.Close();
     excel.DisplayAlerts = false;
     excel.Application.Quit();
-
 }
 
-function showSelected(){
-  console.info("i am here");    
+function createTable(){
+    $(document.createElement('table'));
 }
 //according menu
 
