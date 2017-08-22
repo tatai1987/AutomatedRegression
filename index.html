@@ -34,7 +34,7 @@
                     </li>
                    
                     <li role="presentation" class="disabled">
-                        <a href="#complete" data-toggle="tab" aria-controls="Results" role="tab" title="Complete">
+                        <a href="#complete" data-toggle="tab" onclick='readMRF();' aria-controls="Results" role="tab" title="Complete">
                             <span class="round-tab">
                                 <i class="fa fa-list-alt"></i>
                             </span>
@@ -295,14 +295,14 @@
                         <ul class="list-inline pull-right margin-top-1">
 
                             <li><button type="button" id="execute" class="btn btn-primary next-step" onclick="updateMDF();">Execute Now</button></li>
-                            <li><button type="button" id="reset" class="btn btn-primary next-step" onclick="readMRF();">Reset</button></li>
+                            <li><button type="button" id="reset" class="btn btn-primary next-step">Reset</button></li>
                             <li><button type="button" id="schedule-later" class="btn btn-primary next-step">Scheduled for later</button></li>                        
                             </ul>
                     </div>
                     
                     <div class="tab-pane" role="tabpanel" id="complete">
                         <div class="step44">                            
-                             <div id="accordion-container">
+                             <div id="accordion-container" >
                                 <div id="chartContainer" style="height: 300px; width: 100%;"></div>   
                             </div>
             </form>
