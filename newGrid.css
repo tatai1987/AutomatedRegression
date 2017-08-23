@@ -349,8 +349,7 @@ strong {
 }
   .btn-primary {
     background-color: #603cba;
-    border-color: #603cba;
-  }
+   }
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2220,5 +2219,14 @@ strong {
 #dyn-table{
   border: 2px solid #cccccc;
 }
-
-
+.btn{
+  border-radius: 0px !important;
+  border-color: none !important;
+  padding: 0px 0px 0px !important;
+  white-space: inherit !important;
+  text-align: justify !important;
+}
+#custom-scenario,#reset,#execute,#schedule-later{
+  padding: 6px 12px !important;
+  border-radius: 4px !important;
+}
