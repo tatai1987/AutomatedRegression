@@ -8,6 +8,7 @@ function prevTab(elem) {
 function updateMDF() {
     var suite = $('input[name=suite]:checked', '#tab-execution-console').val();
     var idForSuite = document.getElementsByName("suite")[0].getAttribute('id');
+    alert(idForSuite);
     var environment = $('input[name=environment]:checked', '#tab-env-health').val();
     var excel_file;
     var suites = suite.split(" ");
@@ -108,6 +109,7 @@ function readMRF() {
 
     var excel_file;
     var idForSuite = document.getElementsByName("suite")[0].getAttribute('id');
+    
 
     if (idForSuite.indexOf("nwp") !== -1) {
         if (idForSuite.indexOf("smoke") !== -1) {
