@@ -91,11 +91,11 @@ function updateMDF() {
 
     if (idForSuite.indexOf("sof") !== -1) {
         if (idForSuite.indexOf("smoke") !== -1) {
-            shell.Exec("wscript C:\\Automation\\SOA\\Smoke\\Execute.vbs");
+            shell.Exec("wscript C:\\Automation\\SOF\\Smoke\\Execute.vbs");
         }
 
         if (idForSuite.indexOf("regression") !== -1) {
-            shell.Exec("wscript C:\\Automation\\SOA\\Regression\\Execute.vbs");
+            shell.Exec("wscript C:\\Automation\\SOF\\Regression\\Execute.vbs");
         }
 
     }
@@ -121,11 +121,11 @@ function readMRF() {
 
     if (idForSuite.indexOf("sof") !== -1) {
         if (idForSuite.indexOf("smoke") !== -1) {
-            excel_file = excel.Workbooks.Open("C:\\Automation\\SOA\\Smoke\\DataFiles\\MRF.xlsx");
+            excel_file = excel.Workbooks.Open("C:\\Automation\\SOF\\Smoke\\DataFiles\\MRF.xlsx");
         }
 
         if (idForSuite.indexOf("regression") !== -1) {
-            excel_file = excel.Workbooks.Open("C:\\Automation\\SOA\\Regression\\DataFiles\\MRF.xlsx");
+            excel_file = excel.Workbooks.Open("C:\\Automation\\SOF\\Regression\\DataFiles\\MRF.xlsx");
         }
 
     }
