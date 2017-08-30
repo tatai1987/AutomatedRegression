@@ -10,6 +10,7 @@ function updateMDF() {
     var suite = $('input[name=suite]:checked', '#tab-execution-console').val();
     var idForSuite = $('input[name=suite]:checked', '#tab-execution-console')[0].id;
     var environment = $('input[name=environment]:checked', '#tab-env-health').val();
+    alert(idForSuite);
     var excel_file;
     var suites = suite.split(" ");
 
@@ -92,6 +93,7 @@ function updateMDF() {
 
     if (idForSuite.indexOf("sof") !== -1) {
         if (idForSuite.indexOf("smoke") !== -1) {
+            alert('I am here');
             shell.Exec("wscript C:\\Automation\\SOF\\Smoke\\Execute.vbs");
         }
 
