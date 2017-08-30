@@ -106,10 +106,14 @@ function updateMDF() {
 
 function readMRF() {
 
+    var suite = $('input[name=suite]:checked', '#tab-execution-console').val();
+    var idForSuite = $('input[name=suite]:checked', '#tab-execution-console')[0].id;
+    alert(suite);
+    alert(idForSuite);
     var excel = new ActiveXObject("Excel.Application");
 
     var excel_file;
-    var idForSuite = document.getElementsByName("suite")[0].getAttribute('id');
+    
     
 
     if (idForSuite.indexOf("nwp") !== -1) {
