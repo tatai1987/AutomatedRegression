@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Test Command Console</title>
+    <link rel="stylesheet" href="newGrid.css">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container" style="width: 1370px">
+        <div class="row">
+            <section>
+                <div class="wizard">
+                    <div id="heading" style="text-align:center;">Create Custom Scenarios</div>
+
+                    <form role="form" id="test-console">
+                        <div class="tab-content">
+                            <div class="tab-pane active" role="tabpanel" id="step1">
+                                <div class="step1">
+                                    <div class="row">
+                                        <div class="tab-pane" role="tabpanel" id="step2">
+                                        <div class="step2">
+                                            <div class="step_21">
+                                                <div class="row">
+                                                    <div class="col-sm-4" id="tab-env-health" style="width:20.33333333%">
+                                                        <div class="tile purple" style="width: 60%;">
+                                                            <h3 class="title">Browser</h3>
+                                                        </div>
+                                                        <div id="env-tab btn-group" data-toggle="buttons">
+                                            
+                                            <label class="btn btn-primary metrostyle orgmetro  tile orange btn-group" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F1" id="option1" autocomplete="off" >
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">Chrome </span>
+                                                </input>                            
+                                            </label>
+
+                                            <label class="btn metrostyle eenmetro btn-group tile green btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">Firefox </span>  
+                                                </input>
+                                            </label>
+
+                                            <label class="btn metrostyle eenmetro btn-group tile yellow btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">IE </span>  
+                                                </input>
+                                            </label>
+
+                                            <label class="btn metrostyle eenmetro btn-group tile red btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">N/A </span>  
+                                                </input>
+                                            </label>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="step_21">
+                                                <div class="row">
+                                                    <div class="col-sm-4" id="tab-env-health" style="width:20.33333333%;margin-left:-60px">
+                                                        <div class="tile green" style="width: 60%;">
+                                                            <h3 class="title" >Language</h3>
+                                                        </div>
+                                                        <div id="env-tab btn-group" data-toggle="buttons">
+                                            
+                                            <label class="btn btn-primary metrostyle orgmetro  tile orange btn-group" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F1" id="option1" autocomplete="off" >
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">English - "EN" </span>
+                                                </input>                            
+                                            </label>
+
+                                            <label class="btn metrostyle eenmetro btn-group tile green btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">Chinese (Simplified) - "CN" </span>  
+                                                </input>
+                                            </label>
+
+                                             <label class="btn metrostyle eenmetro btn-group tile yellow btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">Chinese (Traditional) - "ZH" </span>  
+                                                </input>
+                                            </label>
+
+                                             <label class="btn metrostyle eenmetro btn-group tile red btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">France (French) - "FR" </span>  
+                                                </input>
+                                            </label>
+
+                                             <label class="btn metrostyle eenmetro btn-group tile blue btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">Netherlands (Frisian) - "NL" </span>  
+                                                </input>
+                                            </label>
+
+                                            <label class="btn metrostyle eenmetro btn-group tile pink btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">Poland (Polish) - "PL" </span>  
+                                                </input>
+                                            </label>
+
+
+                                            <label class="btn metrostyle eenmetro btn-group tile green btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">Deutscheland (Deutsch) - "DE" </span>  
+                                                </input>
+                                            </label>
+
+
+                                                        </div>
+                                                    </div>
+
+
+                                                  
+                                                <div class="row">
+                                                    <div class="col-sm-4" id="tab-env-health" style="width:20.33333333%;margin-left:-60px">
+                                                        <div class="tile yellow" style="width: 60%;">
+                                                            <h3 class="title">Channel</h3>
+                                                        </div>
+                                                        <div id="env-tab btn-group" data-toggle="buttons">
+                                            
+                                            <label class="btn btn-primary metrostyle orgmetro  tile orange btn-group" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F1" id="option1" autocomplete="off" >
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">Web</span>
+                                                </input>                            
+                                            </label>
+
+                                            <label class="btn metrostyle eenmetro btn-group tile green btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">Store</span>  
+                                                </input>
+                                            </label>
+                                                        
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-4" id="tab-env-health" style="width:19%;margin-left:-60px">
+                                                        <div class="tile blue" style="width: 60%;">
+                                                            <h3 class="title">Customer Type</h3>
+                                                        </div>
+                                                        <div id="env-tab btn-group" data-toggle="buttons">
+                                            
+                                            <label class="btn btn-primary metrostyle orgmetro  tile orange btn-group" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F1" id="option1" autocomplete="off" >
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">Family</span>
+                                                </input>                            
+                                            </label>
+
+                                            <label class="btn metrostyle eenmetro btn-group tile green btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">Business</span>  
+                                                </input>
+                                            </label>
+
+                                             <label class="btn metrostyle eenmetro btn-group tile green btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">Private</span>  
+                                                </input>
+                                            </label>
+                                                        
+                                                    </div>
+
+                                                </div>  
+
+
+                                                 <div class="row">
+                                                    <div class="col-sm-4" id="tab-env-health" style="width:19.33333333%;margin-left:-60px">
+                                                        <div class="tile red" style="width: 60%;">
+                                                            <h3 class="title">Article Type</h3>
+                                                        </div>
+                                                        <div id="env-tab btn-group" data-toggle="buttons">
+                                            
+                                            <label class="btn btn-primary metrostyle orgmetro  tile orange btn-group" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F1" id="option1" autocomplete="off" >
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">Parcel - Default</span>
+                                                </input>                            
+                                            </label>
+
+                                            <label class="btn metrostyle eenmetro btn-group tile green btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">Truck - Default</span>  
+                                                </input>
+                                            </label>
+
+                                             <label class="btn metrostyle eenmetro btn-group tile green btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">Both - Default</span>  
+                                                </input>
+                                            </label>
+                                                        
+                                                    </div>
+
+                                                </div>  
+
+
+
+                                                 <div class="row">
+                                                    <div class="col-sm-4" id="tab-env-health" style="width:19.33333333%;margin-left:-60px">
+                                                        <div class="tile green" style="width: 60%;">
+                                                            <h3 class="title">Payment Type</h3>
+                                                        </div>
+                                                        <div id="env-tab btn-group" data-toggle="buttons">
+                                            
+                                            <label class="btn btn-primary metrostyle orgmetro  tile orange btn-group" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F1" id="option1" autocomplete="off" >
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">Credit Card - "Default"</span>
+                                                </input>                            
+                                            </label>
+
+                                            <label class="btn metrostyle eenmetro btn-group tile green btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">Gift Card - "Default"</span>  
+                                                </input>
+                                            </label>
+
+                                             <label class="btn metrostyle eenmetro btn-group tile green btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">Both - Default</span>  
+                                                </input>
+                                            </label>
+                                                        
+                                                    </div>
+
+                                                </div>  
+
+
+
+                                           
+                                            
+                                            </form>
+                    </div>
+            </section>
+            </div>
+            </div>
+</body>
+
+</html>
