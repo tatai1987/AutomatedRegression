@@ -1,45 +1,309 @@
 <!DOCTYPE html>
-<html >
 <head>
-  <meta charset="UTF-8">
-  <title>Test Command Console</title>
-  
-  
-  
-      <link rel="stylesheet" href="css/style.css">
-
-  
+    <title>Test Command Console</title>
+    <link rel="stylesheet" href="newGrid.css">
+    <script type="text/javascript" src="grid.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
-  <div class="wrapper">
-	<div class="container">
-		<h1>Welcome</h1>
-		
-		<form class="form">
-			<input type="text" placeholder="Username">
-			<input type="password" placeholder="Password">
-			<div style="width:10px;margin-left:176px;margin-bottom:10px;"><button type="submit" id="login-button">Login</button></div>
-			<button type="submit" id="login-button"><a href="registration.html" style="color: #53e3a6; text-decoration: none;">Sign Up</a></button>
-		</form>
-	</div>
-	
-	<ul class="bg-bubbles">
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul>
+<div class="container">
+    <div class="row">
+	<section>
+        <div class="wizard">
+            <div id="heading" style="text-align:center;">Welcome to Automated Text Execution</div>
+            <div class="wizard-inner">                
+                <ul class="nav nav-tabs" align='center' role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#step1" data-toggle="tab" aria-controls="Environment Health" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="fa fa-stethoscope"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li role="presentation" class="disabled">
+                        <a href="#step2" data-toggle="tab" aria-controls="Execute Tests" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <i class="fa fa-tasks"></i>
+                            </span>
+                        </a>
+                    </li>
+                   
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" onclick='readMRF();' aria-controls="Results" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="fa fa-list-alt"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <form role="form" id="test-console">
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="step1">
+                        <div class="step1">
+                            <div class="row">
+                            
+                            </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="env-health-nwp">Environment Health - NWP</label>
+                                <div class="form-group">
+                                    <!-- On rows -->
+                                      <table class="table table-striped">
+                                        <tr class="active">
+                                        <!-- On cells (`td`or `th`) -->
+                                            <td class="active">Content</td>
+                                            <td class="success">Content</td>
+                                            <td class="warning">Content</td>
+                                            <td class="danger">content</td>
+                                            <td class="info">content</td>
+                                        </tr>
+                                        <tr class="active">
+                                        <!-- On cells (`td`or `th`) -->
+                                            <td class="active">Content</td>
+                                            <td class="success">Content</td>
+                                            <td class="warning">Content</td>
+                                            <td class="danger">content</td>
+                                            <td class="info">content</td>
+                                        </tr>
+                                        <tr class="active">
+                                        <!-- On cells (`td`or `th`) -->
+                                            <td class="active">Content</td>
+                                            <td class="success">Content</td>
+                                            <td class="warning">Content</td>
+                                            <td class="danger">content</td>
+                                            <td class="info">content</td>
+                                        </tr>
+                                        <tr class="active">
+                                        <!-- On cells (`td`or `th`) -->
+                                            <td class="active">Content</td>
+                                            <td class="success">Content</td>
+                                            <td class="warning">Content</td>
+                                            <td class="danger">content</td>
+                                            <td class="info">content</td>   
+                                        </tr>
+                                      </table>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="env-health-nwp">Environment Health - SOM</label>
+                                <div class="form-group">
+                                  <table class="table table-striped">
+                                        <tr class="active">
+                                        <!-- On cells (`td`or `th`) -->
+                                            <td class="active">Content</td>
+                                            <td class="success">Content</td>
+                                            <td class="warning">Content</td>
+                                            <td class="danger">content</td>
+                                            <td class="info">content</td>
+                                        </tr>
+                                        <tr class="active">
+                                        <!-- On cells (`td`or `th`) -->
+                                            <td class="active">Content</td>
+                                            <td class="success">Content</td>
+                                            <td class="warning">Content</td>
+                                            <td class="danger">content</td>
+                                            <td class="info">content</td>
+                                        </tr>
+                                        <tr class="active">
+                                        <!-- On cells (`td`or `th`) -->
+                                            <td class="active">Content</td>
+                                            <td class="success">Content</td>
+                                            <td class="warning">Content</td>
+                                            <td class="danger">content</td>
+                                            <td class="info">content</td>
+                                        </tr>
+                                        <tr class="active">
+                                        <!-- On cells (`td`or `th`) -->
+                                            <td class="active">Content</td>
+                                            <td class="success">Content</td>
+                                            <td class="warning">Content</td>
+                                            <td class="danger">content</td>
+                                            <td class="info">content</td>
+                                        </tr>
+                                      </table>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                   <div class="tab-pane" role="tabpanel" id="step2">
+                        <div class="step2">
+                            <div class="step_21">   
+                                <div class="row">
+                                    <div class="col-sm-4" id="tab-env-health">
+                                    <div class="tile purple">
+                                        <h3 class="title">Select Environment</h3>
+                                    </div>
+                                    <div id="env-tab btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary metrostyle orgmetro  tile orange btn-group" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F1" id="option1" autocomplete="off" >
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">CTE-F1 </span>
+                                                </input>                            
+                                            </label>
+                                                                                
+                                            <label class="btn metrostyle eenmetro btn-group tile green btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-F2" id="option2" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">CTE-F2 </span>  
+                                                </input>
+                                            </label>
+                                        
+                                            <label class="btn metrostyle boometro btn-group tile purple btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="CTE-M">
+                                                    <span style="color:white;float:left;margin-top:35px;margin-left:10px;margin-right:50px">CTE-M</span>
+                                                </input>
+                                            </label>
+                                        
+                                        
+                                            <label class="btn metrostyle reemetro btn-group tile otherRed btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="PTE" id="pte" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">PTE</span>
+                                                </input>
+                                            </label>    
+                                        
+                                        
+                                            <label class="btn metrostyle yoometro btn-group tile btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="PPE1"> 
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">PPE-1</span>
+                                                </input>
+                                            </label>    
+                                        
+                                            <label class="btn metrostyle othergreen btn-group tile btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="Sprintly">      
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:70px">Sprintly</span>
+                                               </input>
+                                            </label>    
+                                        
+                                            <label class="btn metrostyle yellow btn-group tile btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="Sprintly2">      
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:70px">Sprintly2</span>
+                                                </input>
+                                            </label>    
+                                        
+                                            <label class="btn btn-primary metrostyle tile deeporange btn-group" style="cursor: pointer">
+                                                <input type="radio" name="environment" value="Weekly">      
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:70px">Weekly</span>
+                                                </input>
+                                            </label>
+                                                                                
+                                            <label class="btn metrostyle metrostylelarge tile otherRed btn-group btn-primary" style="cursor: pointer" >
+                                                <input type="radio" name="environment" value="Weekly2">     
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:70px">Weekly2</span>
+                                                </input>
+                                            </label>
+                                        
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-4" id="tab-execution-console">
+                                    <div class="tile otheryellow">
+                                        <h3 class="title">NWP Suite</h3>
+                                    </div>
+                                    <div id="regression-tab" data-toggle="buttons">                                        
+                                            <label class="btn metrostyle violet btn-group tile btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="suite" value="NWPFE_AUTH NWPFE_LIVE NWPFE_Preview" id="nwpsmoke1" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 40px; margin-left: 10px;margin-right:20px">NWP Smoke Test </span>
+                                                </input>
+                                            </label>    
+                                        
+                                            <label class="btn metrostyle eenmetro btn-group tile lightgreen btn-primary" style="cursor: pointer">
+                                                <input type="radio" name="suite" value="NWPFE_AUTH NWPFE_LIVE NWPFE_Preview" id="nwpregression1" autocomplete="off">
+                                                    <span style="color: white; float: left; margin-top: 40px; margin-left: 5px ;margin-right:0px">NWP Regression Test </span>
+                                                </input>
+                                            </label>    
+                                                                              
+                                            <label class="btn metrostyle reemetro btn-group tile red btn-primary" style="cursor: pointer"> 
+                                                <input type="radio" name="suite" value="" id="nwpsmoke2" autocomplete="off"> 
+                                                    <span style="color: white; float: left; margin-top: 40px; margin-left: 10px;margin-right:20px" >ATG Smoke Test </span>
+                                                </input>
+                                            </label>    
+                                        
+                                        
+                                            <label class="btn metrostyle orgmetro btn-group tile othergreen btn-primary" style="cursor: pointer"> 
+                                                    <input type="radio" name="suite" value="CMS" id="nwpsmoke3" autocomplete="off">  
+                                                <span style="color: white; float: left; margin-top: 40px; margin-left: 10px ;margin-right:20px">WCS Smoke Test</span>
+                                                </input>
+                                            </label>
+                                        
+                                        
+                                            <label class="btn btn-group btn-primary metrostyle tile purple" style="cursor: pointer"> 
+                                                <input type="radio" name="suite" value="ICOW" id="nwpregression2" autocomplete="off">  
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:25px">ICOW Regression Test </span>
+                                                </input>
+                                            </label>
+                                                                                
+                                            <label class="btn btn-group btn-primary metrostyle tile yellow" style="cursor: pointer">  
+                                                <input type="radio" name="suite" value="" id="nwpregression3" autocomplete="off">  
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:34px">ATG Regression Test </span>
+                                              </input>
+                                            </label>
+                                                                                
+                                            <label class="btn btn-primary metrostyle yoometro tile metrostylelarge" style="cursor: pointer">  
+                                                <input type="radio" name="suite" value="CMS" id="nwpregression4" autocomplete="off">  
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">WCS RegressionTest</span>
+                                                </input>
+                                            </label>
+                                                                       
+                                            <label class="btn metrostyle orgmetro tile purple btn-primary" style="cursor: pointer;float:right; margin-right: -10.8em;margin-top: -22.4em;">                      
+                                                <input type="radio" name="suite" value="" id="sofsmoke1" autocomplete="off">  
+                                                    <span style="color: white; float: left; margin-top: 20px; margin-left: 10px;margin-right:80px">SOF Smoke Pack </span>
+                                                </input>
+                                            </label>
+                                        
+                                            <label class="btn metrostyle eenmetro tile yellow btn-primary" style="cursor: pointer;float:right; margin-right: -22em;margin-top: -22.4em;">  
+                                               <input type="radio" name="nwp-smoke-test" value="" id="sofregression1" autocomplete="off">    
+                                                    <span style="color: white; float: left; margin-top: 8px; margin-left: 10px ;margin-right:45px">Single Fulfilment Unit Regression Pack </span>
+                                                </input>
+                                            </label>
+                                                                                
+                                            <label class="btn metrostyle boometro tile orange btn-primary" style="cursor: pointer;float:right; margin-right: -22em;margin-top: -14.7em;"> 
+                                                <input type="radio" name="nwp-smoke-test" value="" id="sofsmoke2" autocomplete="off">  
+                                                    <span style="color:white;float:left;margin-top:8px;margin-left:10px;margin-right:45px">Multiple Fulfilment Unit Regression Pack</span>
+                                                </input>
+                                            </label>
+                                        
+                                            <label class="btn metrostyle reemetro btn-primary tile green" style="cursor: pointer;float:right; margin-right: -10.8em;margin-top: -14.8em;"> 
+                                                <input type="radio" name="nwp-smoke-test" value="" id="sofregression2" autocomplete="off">  
+                                                    <span style="color: white; float: left; margin-top: 15px; margin-left: 10px;margin-right:65px">SOF Order Happy Flow </span>
+                                                </input>
+                                            </label>                                        
+                                                                                
+                                            <label class="btn metrostyle metrostylelarge yoometro btn-primary tile otherRed" style="cursor: pointer;float:right; margin-right: -18.7em;margin-top: -7em;"> 
+                                                <input type="radio" name="nwp-smoke-test" value="" id="sofregression3" autocomplete="off">  
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">SOF Devation Flow</span>
+                                                </input>
+                                            </label>
+                                    </div>
+                                                       
+                            </div>
+                        </div>
+                        <ul class="list-inline pull-right margin-top-1">
+                            <li><button type="button" id="custom-scenario" class="btn btn-primary next-step"><a href="customScenario.html"> <span style="color:white;float:left;">Create a Custom Scenario</span></a></button></li>
+                            <li><button type="button" id="execute" class="btn btn-primary next-step" onclick="updateMDF();">Execute Now</button></li>
+                            <li><button type="button" id="reset" class="btn btn-primary next-step">Reset</button></li>
+                            <li><button type="button" id="schedule-later" class="btn btn-primary next-step">Schedule for later</button></li>                        
+                            </ul>
+                    </div>
+                    </div>
+                    </div>
+
+                    
+                    <div class="tab-pane" role="tabpanel" id="complete">
+                        <div class="step44">                            
+                             <div id="accordion-container" >
+                                <div id="chartContainer" style="height: 300px; width: 100%;"></div>  
+                                <div id="dyn-table"></div>     
+                            </div>
+            </form>
+        </div>
+    </section>
+   </div>
 </div>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-    <script src="js/index.js"></script>
-
 </body>
 </html>

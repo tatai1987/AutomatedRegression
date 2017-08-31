@@ -43,12 +43,13 @@ func main() {
 
 //Handles redirection logic
 func redirect(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("inside redirect")
 	if r.FormValue("signup") == "signup" {
 		if signup(w, r) == http.StatusOK {
 			http.ServeFile(w, r, r.URL.Path[1:])
 			http.Redirect(w, r, "/", http.StatusMovedPermanently)
 		} else if signup(w, r) == http.StatusNotFound {
-			http.Redirect(w, r, "http://localhost:8080/register.view.html", http.StatusSeeOther)
+			http.Redirect(w, r, "http://localhost:8080/registeration.html", http.StatusSeeOther)
 		}
 	} else if r.FormValue("login") == "login" {
 		if login(w, r) == http.StatusOK {
