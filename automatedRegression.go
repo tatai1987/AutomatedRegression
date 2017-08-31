@@ -7,8 +7,8 @@ import (
 	"os"
 	"time"
 
-	mgo "gopkg.in/mgo.v2"
-	"gopkg.in/mgo.v2/bson"
+	mgo "AutomatedRegression/gopkg.in/mgo.v2"
+	"AutomatedRegression/gopkg.in/mgo.v2/bson"
 )
 
 var target string
