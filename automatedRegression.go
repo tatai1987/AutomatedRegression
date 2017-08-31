@@ -19,7 +19,7 @@ const (
 
 //const MongoDb details
 const (
-	hosts    = "127.0.0.1:27017"
+	hosts    = "mongodb://admin:RPOVHYNUEKDKGOIG@bluemix-sandbox-dal-9-portal.8.dblayer.com:29459,bluemix-sandbox-dal-9-portal.7.dblayer.com:29459/compose?ssl=true&authSource=admin"
 	database = "testcontrol"
 	//username   = "admin"
 	//password   = "youPassword"
@@ -49,11 +49,11 @@ func redirect(w http.ResponseWriter, r *http.Request) {
 			http.ServeFile(w, r, r.URL.Path[1:])
 			http.Redirect(w, r, "/", http.StatusMovedPermanently)
 		} else if signup(w, r) == http.StatusNotFound {
-			http.Redirect(w, r, "http://localhost:8080/registeration.html", http.StatusSeeOther)
+			http.Redirect(w, r, "registration.html", http.StatusSeeOther)
 		}
 	} else if r.FormValue("login") == "login" {
 		if login(w, r) == http.StatusOK {
-			http.Redirect(w, r, "http://localhost:8080/home.html", http.StatusSeeOther)
+			http.Redirect(w, r, "home.html", http.StatusSeeOther)
 		} else if login(w, r) == http.StatusUnauthorized {
 			http.ServeFile(w, r, r.URL.Path[1:])
 			http.Redirect(w, r, "/", http.StatusMovedPermanently)
