@@ -2297,3 +2297,30 @@ strong {
     margin-left: 10em;
   }
  
+  .border{
+    border: 0.4em solid gray;
+    height: 4.7em;
+    /*background-color: #ccc !important;*/
+    color: #000000;
+  }
+  .green{
+    background: #82E0AA !important; 
+    border: 1px solid gray;
+  }
+  .red{
+      background: #EC7063 !important; 
+      border: 1px solid #ccc;
+  }
+  .solid-border{
+    border: 1px solid gray;
+  }
+  .button{
+    display: block;
+    width: auto;
+    height: auto;
+    background: #337ab7;
+    padding: 8px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+  }
