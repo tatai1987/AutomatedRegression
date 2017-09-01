@@ -2241,6 +2241,7 @@ strong {
   margin-bottom: 30px;
   width: 184%;
   padding: 0.5em;
+  text-align: center;
 }
 .tileSelected {
   height:100px;
