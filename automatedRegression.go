@@ -57,7 +57,7 @@ func redirect(w http.ResponseWriter, r *http.Request) {
 			http.ServeFile(w, r, r.URL.Path[1:])
 			http.Redirect(w, r, "/", http.StatusMovedPermanently)
 		} else if signup(w, r) == http.StatusNotFound {
-			http.Redirect(w, r, "registration.html", http.StatusSeeOther)
+			http.Redirect(w, r, "/registration.html", http.StatusSeeOther)
 		}
 	} else if r.FormValue("login") == "login" {
 		fmt.Println("login")
@@ -117,8 +117,6 @@ func login(w http.ResponseWriter, r *http.Request) int {
 func signup(w http.ResponseWriter, r *http.Request) int {
 	var email = r.FormValue("email")
 	var pwd = r.FormValue("psw")
-	fmt.Println(email)
-	fmt.Println(pwd)
 
 	info := &mgo.DialInfo{
 		Addrs:    []string{hosts},
