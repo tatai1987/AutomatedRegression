@@ -14,10 +14,11 @@
     <div class="row">
 	<section>
         <div class="wizard">
-            <div id="heading" style="text-align:center;">Welcome to Automated Text Execution</div>
+            <div id="heading" style="text-align:center;">Welcome to Test Command Console</div>
             <div class="wizard-inner">                
-                <ul class="nav nav-tabs" align='center' role="tablist">
-                    <li role="presentation" class="active">
+                <ul class="nav nav-tabs" align='center' role="tablist" id="headTab">
+                    <li role="presentation" class="active apphealth">
+			<span id="titleCss">App Health</span>
                         <a href="#step1" data-toggle="tab" aria-controls="Environment Health" role="tab" title="Step 1">
                             <span class="round-tab">
                                 <i class="fa fa-stethoscope"></i>
@@ -26,6 +27,7 @@
                     </li>
                     
                     <li role="presentation" class="disabled">
+			<span id="titleCss">Execution</span>
                         <a href="#step2" data-toggle="tab" aria-controls="Execute Tests" role="tab" title="Step 2">
                             <span class="round-tab">
                                 <i class="fa fa-tasks"></i>
@@ -34,6 +36,7 @@
                     </li>
                    
                     <li role="presentation" class="disabled">
+			<span id="titleCss">Dashboard</span>
                         <a href="#complete" data-toggle="tab" onclick='readMRF();' aria-controls="Results" role="tab" title="Complete">
                             <span class="round-tab">
                                 <i class="fa fa-list-alt"></i>
@@ -164,7 +167,7 @@
                                         
                                             <label class="btn metrostyle reemetro btn-group tile otherRed btn-primary" style="cursor: pointer">
                                                 <input type="radio" name="environment" value="PTE" id="pte" autocomplete="off">
-                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">PTE</span>
+                                                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">iPTE</span>
                                                 </input>
                                             </label>    
                                         
@@ -193,18 +196,28 @@
                                                 </input>
                                             </label>
                                                                                 
-                                            <label class="btn metrostyle metrostylelarge tile otherRed btn-group btn-primary" style="cursor: pointer" >
+                                            <label class="btn metrostyle metrostyle tile otherRed btn-group btn-primary" style="cursor: pointer" >
                                                 <input type="radio" name="environment" value="Weekly2">     
                                                     <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:70px">Weekly2</span>
                                                 </input>
                                             </label>
-                                        
+						
+					    <label class="btn metrostyle metrostyle tile otherRed btn-group btn-primary" style="cursor: pointer" >
+				                <input type="radio" name="environment" value="">     
+				                    <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:70px">PTE2</span>
+			                        </input>
+	                	            </label>
                                     </div>
                                     </div>
                                     <div class="col-sm-4" id="tab-execution-console">
+				     <div class="tilebig yellow">
+		                       <h3 class="title">Regression Suite</h3>
+                                    </div>
                                     <div class="tile otheryellow">
                                         <h3 class="title">NWP Suite</h3>
                                     </div>
+				      <div id="sofSuite" class="tile orange">
+-                                         <h3 class="title">SOF Suite</h3>
                                     <div id="regression-tab" data-toggle="buttons">                                        
                                             <label class="btn metrostyle violet btn-group tile btn-primary" style="cursor: pointer">
                                                 <input type="radio" name="suite" value="NWPFE_AUTH NWPFE_LIVE NWPFE_Preview" id="nwpsmoke1" autocomplete="off">
@@ -290,6 +303,7 @@
                             <li><button type="button" id="schedule-later" class="btn btn-primary next-step">Schedule for later</button></li>                        
                             </ul>
                     </div>
+		    <a href="" style="margin-bottom:2px;">Scheduled deployments / Calendar</a>
                     </div>
                     </div>
 
