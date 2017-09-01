@@ -113,6 +113,7 @@ func signup(w http.ResponseWriter, r *http.Request) int {
 	var pwd = r.FormValue("psw")
 	fmt.Println(email)
 	fmt.Println(pwd)
+
 	info := &mgo.DialInfo{
 		Addrs:    []string{hosts},
 		Timeout:  10 * time.Second,
@@ -120,6 +121,7 @@ func signup(w http.ResponseWriter, r *http.Request) int {
 		//Username: username,
 		//Password: password,
 	}
+	fmt.Println(os.Getenv("VCAP_SERVICES"))
 	fmt.Println("Connection Established")
 	session, err := mgo.DialWithInfo(info)
 	if err != nil {
