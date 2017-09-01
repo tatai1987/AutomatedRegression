@@ -63,7 +63,7 @@ func redirect(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("login")
 		if login(w, r) == http.StatusOK {
 			fmt.Println("inside login 1")
-			http.Redirect(w, r, "home.html", http.StatusSeeOther)
+			http.Redirect(w, r, "/home.html", http.StatusSeeOther)
 		} else if login(w, r) == http.StatusUnauthorized {
 			http.ServeFile(w, r, r.URL.Path[1:])
 			http.Redirect(w, r, "/", http.StatusMovedPermanently)
@@ -82,11 +82,11 @@ func login(w http.ResponseWriter, r *http.Request) int {
 	var pwd = r.FormValue("psw")
 
 	info := &mgo.DialInfo{
-		Addrs:   []string{hosts},
-		Timeout: 60 * time.Second,
-		//Database: database,
-		//Username: username,
-		//Password: password,
+		Addrs:    []string{hosts},
+		Timeout:  60 * time.Second,
+		Database: database,
+		Username: username,
+		Password: password,
 	}
 
 	session, err := mgo.DialWithInfo(info)
