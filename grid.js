@@ -6,11 +6,11 @@ function prevTab(elem) {
 }
 
 function updateMDF() {
-    
+
     var suite = $('input[name=suite]:checked', '#tab-execution-console').val();
     var idForSuite = $('input[name=suite]:checked', '#tab-execution-console')[0].id;
     var environment = $('input[name=environment]:checked', '#tab-env-health').val();
-    
+
     var excel_file;
     var suites = suite.split(" ");
 
@@ -77,7 +77,7 @@ function updateMDF() {
         excel.DisplayAlerts = false;
         excel.Application.Quit();
 
-     }
+    }
     var shell = new ActiveXObject("WScript.Shell");
 
 
@@ -106,9 +106,9 @@ function updateMDF() {
 
 function createScenario() {
 
-    
+    alert('I am Pragati');
     var suiteForBrowser = $('input[name=Browser]:checked', '#tab-browser-health').val();
-    
+
     var suiteForLanguage = $('input[name=Language]:checked', '#tab-language-health').val();
 
     var suiteForChannel = $('input[name=Channel]:checked', '#tab-channel-health').val();
@@ -116,99 +116,31 @@ function createScenario() {
     var suiteForCustomerType = $('input[name=CustomerType]:checked', '#tab-customertype-health').val();
 
     var suiteForArticleType = $('input[name=ArticleType]:checked', '#tab-articletype-health').val();
-    
+
     var suiteForPaymentType = $('input[name=PaymentType]:checked', '#tab-paymenttype-health').val();
-    
+
     var excel_file;
-    var suites = suite.split(" ");
+    
 
     var excel = new ActiveXObject("Excel.Application");
 
-    if (idForSuite.indexOf("nwp") !== -1) {
-        if (idForSuite.indexOf("smoke") !== -1) {
-            excel_file = excel.Workbooks.Open("C:\\Automation\\NWP\\Smoke\\DataFiles\\MDF.xlsx");
-        }
+    excel_file = excel.Workbooks.Open("C:\\Automation\\Custom\\CustomScenario.xlsx");
 
-        if (idForSuite.indexOf("regression") !== -1) {
-            excel_file = excel.Workbooks.Open("C:\\Automation\\NWP\\Regression\\DataFiles\\MDF.xlsx");
-        }
+    var excel_sheet = excel_file.Worksheets("custom");
+    var xlUp = -4162;
+    var countrow = excel_sheet.cells(excel_sheet.rows.count, 1).end(xlUp).row;
+    
+    excel_sheet.Cells(countrow + 1, 1).Value = suiteForBrowser;
+    excel_sheet.Cells(countrow + 1, 2).Value = suiteForLanguage;
+    excel_sheet.Cells(countrow + 1, 3).Value = suiteForChannel;
+    excel_sheet.Cells(countrow + 1, 4).Value = suiteForCustomerType;
+    excel_sheet.Cells(countrow + 1, 5).Value = suiteForArticleType;
+    excel_sheet.Cells(countrow + 1, 6).Value = suiteForPaymentType;
 
-        var excel_sheet = excel_file.Worksheets("Applications");
-        var xlUp = -4162;
-        var countrow = excel_sheet.cells(excel_sheet.rows.count, 1).end(xlUp).row;
-
-        for (var i = 2; i <= countrow; i++) {
-            excel_sheet.Cells(i, 4).Value = 'No';
-        }
-
-        if (suites.length > 1) {
-            for (var i = 2; i <= countrow; i++) {
-                if (excel_sheet.Cells(i, 1).Value == environment && (excel_sheet.Cells(i, 2).Value == suites[0] || excel_sheet.Cells(i, 2).Value == suites[1] || excel_sheet.Cells(i, 2).Value == suites[2])) {
-                    excel_sheet.Cells(i, 4).Value = 'Yes';
-                }
-            }
-        }
-        else {
-            for (var i = 2; i <= countrow; i++) {
-                if (excel_sheet.Cells(i, 1).Value == environment && excel_sheet.Cells(i, 2).Value == suites[0]) {
-                    excel_sheet.Cells(i, 4).Value = 'Yes';
-                }
-            }
-        }
-
-        var excel_sheet = excel_file.Worksheets("Global");
-        var countrow = excel_sheet.cells(excel_sheet.rows.count, 6).end(xlUp).row;
-
-        for (var i = 2; i <= countrow; i++) {
-            excel_sheet.Cells(i, 7).Value = 'N';
-        }
-
-
-        if (suites.length > 1) {
-            for (var i = 2; i <= countrow; i++) {
-                if (excel_sheet.Cells(i, 8).Value.indexOf(suites[0]) !== -1 || excel_sheet.Cells(i, 8).Value.indexOf(suites[1]) !== -1 || excel_sheet.Cells(i, 8).Value.indexOf(suites[2]) !== -1) {
-                    excel_sheet.Cells(i, 7).Value = 'Y';
-                }
-            }
-        }
-        else {
-            for (var i = 2; i <= countrow; i++) {
-                if (excel_sheet.Cells(i, 8).Value.indexOf(suites[0]) !== -1) {
-                    excel_sheet.Cells(i, 7).Value = 'Y';
-                }
-            }
-
-        }
-
-        excel_file.save();
-        excel_file.Close();
-        excel.DisplayAlerts = false;
-        excel.Application.Quit();
-
-     }
-    var shell = new ActiveXObject("WScript.Shell");
-
-
-    if (idForSuite.indexOf("nwp") !== -1) {
-        if (idForSuite.indexOf("smoke") !== -1) {
-            shell.Exec("wscript C:\\Automation\\NWP\\Smoke\\Execute.vbs");
-        }
-
-        if (idForSuite.indexOf("regression") !== -1) {
-            shell.Exec("wscript C:\\Automation\\NWP\\Regression\\Execute.vbs");
-        }
-    }
-
-    if (idForSuite.indexOf("sof") !== -1) {
-        if (idForSuite.indexOf("smoke") !== -1) {
-            shell.Exec("wscript C:\\Automation\\SOF\\Smoke\\Execute.vbs");
-        }
-
-        if (idForSuite.indexOf("regression") !== -1) {
-            shell.Exec("wscript C:\\Automation\\SOF\\Regression\\Execute.vbs");
-        }
-
-    }
+    excel_file.save();
+    excel_file.Close();
+    excel.DisplayAlerts = false;
+    excel.Application.Quit();
 
 }
 
@@ -221,8 +153,8 @@ function readMRF() {
     var excel = new ActiveXObject("Excel.Application");
 
     var excel_file;
-    
-    
+
+
 
     if (idForSuite.indexOf("nwp") !== -1) {
         if (idForSuite.indexOf("smoke") !== -1) {
