@@ -19,10 +19,16 @@ const (
 
 //const MongoDb details
 const (
-	hosts    = "mongodb://admin:RPOVHYNUEKDKGOIG@bluemix-sandbox-dal-9-portal.8.dblayer.com:29459,bluemix-sandbox-dal-9-portal.7.dblayer.com:29459/compose"
-	database = "testcontrol"
+	//hosts    = "mongodb://subhadeep:subhadeep@ds163613.mlab.com:63613"
+	//database = "testcontrol"
 	//username   = "admin"
 	//password   = "youPassword"
+	//collection = "messages"
+
+	hosts    = "ds163613.mlab.com:63613"
+	database = "testcontrol"
+	username = "subhadeep"
+	password = "subhadeep"
 	//collection = "messages"
 )
 
@@ -76,9 +82,9 @@ func login(w http.ResponseWriter, r *http.Request) int {
 	var pwd = r.FormValue("psw")
 
 	info := &mgo.DialInfo{
-		Addrs:    []string{hosts},
-		Timeout:  60 * time.Second,
-		Database: database,
+		Addrs:   []string{hosts},
+		Timeout: 60 * time.Second,
+		//Database: database,
 		//Username: username,
 		//Password: password,
 	}
@@ -116,12 +122,12 @@ func signup(w http.ResponseWriter, r *http.Request) int {
 
 	info := &mgo.DialInfo{
 		Addrs:    []string{hosts},
-		Timeout:  10 * time.Second,
+		Timeout:  30 * time.Second,
 		Database: database,
-		//Username: username,
-		//Password: password,
+		Username: username,
+		Password: password,
 	}
-	fmt.Println(os.Getenv("VCAP_SERVICES"))
+
 	fmt.Println("Connection Established")
 	session, err := mgo.DialWithInfo(info)
 	if err != nil {
