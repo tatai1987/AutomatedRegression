@@ -2323,5 +2323,9 @@ strong {
     padding: 8px;
     text-align: center;
     border-radius: 5px;
-    color: white;
+    color: white !important;
+    text-decoration: none !important;
+  }
+  a:focus, a:hover{
+    background:#337ab7 none repeat scroll 0 0 !important;
   }
