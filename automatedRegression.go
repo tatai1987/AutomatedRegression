@@ -19,7 +19,7 @@ const (
 
 //const MongoDb details
 const (
-	hosts    = "mongodb://admin:RPOVHYNUEKDKGOIG@bluemix-sandbox-dal-9-portal.8.dblayer.com:29459,bluemix-sandbox-dal-9-portal.7.dblayer.com:29459/compose?ssl=true&authSource=admin"
+	hosts    = "mongodb://admin:RPOVHYNUEKDKGOIG@bluemix-sandbox-dal-9-portal.8.dblayer.com:29459,bluemix-sandbox-dal-9-portal.7.dblayer.com:29459/compose"
 	database = "testcontrol"
 	//username   = "admin"
 	//password   = "youPassword"
