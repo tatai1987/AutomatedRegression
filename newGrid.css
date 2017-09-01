@@ -2325,7 +2325,17 @@ strong {
     border-radius: 5px;
     color: white !important;
     text-decoration: none !important;
+    margin-top: 5px;
   }
   a:focus, a:hover{
-    background:#337ab7 none repeat scroll 0 0 !important;
+    background:#286090 none repeat scroll 0 0 !important;
+  }
+  .nwp{
+    border: 0.4em solid gray;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-bottom: 14px;
+    width: 84%;
+    padding: 0.5em;
+    text-align: center;
   }
