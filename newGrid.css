@@ -2235,12 +2235,12 @@ strong {
   margin-right: -22em;
 }
 .tilebig{
-  background: #f7df2d none repeat scroll 0 0;
+  border: 0.4em solid gray;
   box-sizing: border-box;
   display: inline-block;
   margin-bottom: 30px;
-  padding: 2em;
   width: 184%;
+  padding: 0.5em;
 }
 .tileSelected {
   height:100px;
