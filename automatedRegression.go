@@ -17,19 +17,11 @@ const (
 	DEFAULT_PORT = "8080"
 )
 
-//const MongoDb details
 const (
-	//hosts    = "mongodb://subhadeep:subhadeep@ds163613.mlab.com:63613"
-	//database = "testcontrol"
-	//username   = "admin"
-	//password   = "youPassword"
-	//collection = "messages"
-
 	hosts    = "ds163613.mlab.com:63613"
 	database = "testcontrol"
 	username = "subhadeep"
 	password = "subhadeep"
-	//collection = "messages"
 )
 
 type Login struct {
