@@ -1,5 +1,5 @@
  $("#login-button").click(function(event){
-	 alert('Hi');
+	
 		 //event.preventDefault();
 	 
 	 //$('form').fadeOut(500);

@@ -45,14 +45,18 @@ func main() {
 func redirect(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("inside redirect")
 	if r.FormValue("signup") == "signup" {
+		fmt.Println("inside signup")
 		if signup(w, r) == http.StatusOK {
+			fmt.Println("inside signup 1")
 			http.ServeFile(w, r, r.URL.Path[1:])
 			http.Redirect(w, r, "/", http.StatusMovedPermanently)
 		} else if signup(w, r) == http.StatusNotFound {
 			http.Redirect(w, r, "registration.html", http.StatusSeeOther)
 		}
 	} else if r.FormValue("login") == "login" {
+		fmt.Println("login")
 		if login(w, r) == http.StatusOK {
+			fmt.Println("inside login 1")
 			http.Redirect(w, r, "home.html", http.StatusSeeOther)
 		} else if login(w, r) == http.StatusUnauthorized {
 			http.ServeFile(w, r, r.URL.Path[1:])
@@ -107,15 +111,16 @@ func login(w http.ResponseWriter, r *http.Request) int {
 func signup(w http.ResponseWriter, r *http.Request) int {
 	var email = r.FormValue("email")
 	var pwd = r.FormValue("psw")
-
+	fmt.Println(email)
+	fmt.Println(pwd)
 	info := &mgo.DialInfo{
 		Addrs:    []string{hosts},
-		Timeout:  60 * time.Second,
+		Timeout:  10 * time.Second,
 		Database: database,
 		//Username: username,
 		//Password: password,
 	}
-
+	fmt.Println("Connection Established")
 	session, err := mgo.DialWithInfo(info)
 	if err != nil {
 		panic(err)
@@ -127,12 +132,15 @@ func signup(w http.ResponseWriter, r *http.Request) int {
 	session.SetMode(mgo.Monotonic, true)
 
 	c := session.DB(database).C("login")
+	fmt.Println("Table Created")
 	err = c.Insert(&Login{email, pwd})
-
+	fmt.Println("Record Inserted")
 	if err != nil {
+		fmt.Println("ERROR IS THERE")
 		log.Fatal(err)
 		return http.StatusNotFound
 	} else {
+		fmt.Println("SUCCESS")
 		return http.StatusOK
 	}
 }
