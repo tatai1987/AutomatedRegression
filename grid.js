@@ -18,6 +18,7 @@ function updateMDF() {
 
     if (idForSuite.indexOf("nwp") !== -1) {
         if (idForSuite.indexOf("smoke") !== -1) {
+           
             excel_file = excel.Workbooks.Open("C:\\Automation\\NWP\\Smoke\\DataFiles\\MDF.xlsx");
         }
 
@@ -35,14 +36,18 @@ function updateMDF() {
 
         if (suites.length > 1) {
             for (var i = 2; i <= countrow; i++) {
+                
                 if (excel_sheet.Cells(i, 1).Value == environment && (excel_sheet.Cells(i, 2).Value == suites[0] || excel_sheet.Cells(i, 2).Value == suites[1] || excel_sheet.Cells(i, 2).Value == suites[2])) {
+                   
                     excel_sheet.Cells(i, 4).Value = 'Yes';
                 }
             }
         }
         else {
             for (var i = 2; i <= countrow; i++) {
+                
                 if (excel_sheet.Cells(i, 1).Value == environment && excel_sheet.Cells(i, 2).Value == suites[0]) {
+                    
                     excel_sheet.Cells(i, 4).Value = 'Yes';
                 }
             }
@@ -106,7 +111,6 @@ function updateMDF() {
 
 function createScenario() {
 
-    alert('I am Pragati');
     var suiteForBrowser = $('input[name=Browser]:checked', '#tab-browser-health').val();
 
     var suiteForLanguage = $('input[name=Language]:checked', '#tab-language-health').val();
@@ -148,8 +152,7 @@ function readMRF() {
 
     var suite = $('input[name=suite]:checked', '#tab-execution-console').val();
     var idForSuite = $('input[name=suite]:checked', '#tab-execution-console')[0].id;
-    alert(suite);
-    alert(idForSuite);
+   
     var excel = new ActiveXObject("Excel.Application");
 
     var excel_file;
