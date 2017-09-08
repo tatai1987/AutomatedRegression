@@ -18,7 +18,8 @@ const (
 )
 
 const (
-	hosts    = "ds163613.mlab.com:63613"
+	hosts = "ds163613.mlab.com:63613"
+	//hosts    = "127.0.0.1:27017"
 	database = "testcontrol"
 	username = "subhadeep"
 	password = "subhadeep"
@@ -97,11 +98,13 @@ func login(w http.ResponseWriter, r *http.Request) int {
 	if err != nil {
 		fmt.Println("failed")
 	}
+	if email != "" && pwd != "" {
+		if pwd == result.Password {
+			return http.StatusOK
 
-	if pwd == result.Password {
-		return http.StatusOK
-
+		}
 	}
+
 	return http.StatusUnauthorized
 }
 
