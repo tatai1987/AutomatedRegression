@@ -297,6 +297,12 @@ strong {
 .tile.purple, .tile.blue, .tile.red, .tile.orange, .tile.green {
   color: #fff;
 }
+.tile.blueColor{
+	 background: #D6EAF8;
+}
+.tile.grayColor{
+	background: #EAEDED;
+}
 .tile.purple {
   background:  #9f00a7;
 }
@@ -2183,36 +2189,36 @@ strong {
 
 
         .orgmetro {
-            background-color: #603cba;
-        }
+          background-color: #603cba;
+      }
 
-        .ueemetro {
-            background-color: #a200ff;
-        }
+      .ueemetro {
+          background-color: #a200ff;
+      }
 
-        .reemetro {
-            background-color: #f47835;
-        }
+      .reemetro {
+          background-color: #f47835;
+      }
 
-        .eenmetro {
-            background-color: #d41243;
-        }
+      .eenmetro {
+          background-color: #d41243;
+      }
 
-        .boometro {
-            background-color: #8ec127;
-        }
+      .boometro {
+          background-color: #8ec127;
+      }
 
-        .goometro {
-            background-color: #9f00a7;
-        }
+      .goometro {
+          background-color: #9f00a7;
+      }
 
-        .yoometro {
-            background-color: #00aba9;
-        }
+      .yoometro {
+          background-color: #00aba9;
+      }
 
-        .toometro {
-            background-color: #2d89ef;
-        }
+      .toometro {
+          background-color: #2d89ef;
+      }
 .margin-top-1{
     margin-top: 1em;
 }
