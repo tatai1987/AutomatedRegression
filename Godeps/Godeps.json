@@ -1,5 +1,5 @@
 {
 	"ImportPath": "AutomatedRegression",
-	"GoVersion": "go1.8.3",
+	"GoVersion": "go1.8.7",
 	"Deps": []
 }
